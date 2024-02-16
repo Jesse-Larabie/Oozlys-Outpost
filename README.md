@@ -10,7 +10,7 @@ http://localhost:8000/cybersecurity/
 
 Roadmap for Oozly's Outpost:
 
-1.I need to create 8 sections for the different parts of the course that ar e outlined in the cyber security page, I need to figure out if all 8 of these will be there own app in django or in one, They need to all be linked to the cyber security index file.
+1.I need to create 8 sections for the different parts of the course that are outlined in the cyber security page, I need to figure out if all 8 of these will be there own app in django or in one, They need to all be linked to the cyber security index file.
 
 2.I need to fix the homepage and add more info and things to interact with, the button on the top left needs a link among other things. 
 
