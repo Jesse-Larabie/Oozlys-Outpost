@@ -14,7 +14,9 @@ Roadmap for Oozly's Outpost:
 
 2.add more content
 
-3.create a better roadmap
+3.Format the paragraphs better in html, (Bold letters paragraphing etc,)
+
+4.create a better roadmap
 
 
 
