@@ -8,7 +8,7 @@ Url map:
 http://localhost:8000/ (Home for now)
 http://localhost:8000/cybersecurity/
 
-Roadmap for Oozly's Outpost:
+Roadmap for "The Outpost":
 
 1.Compelete the  home page
 
