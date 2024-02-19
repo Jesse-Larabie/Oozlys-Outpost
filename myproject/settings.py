@@ -19,15 +19,16 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'cybersecurity',
     'home',
-    'part_1'
-    'part_2'
-    'part_3'
-    'part_4'
-    'part_5'
-    'part_6'
-    'part_7'
-    'part_8'
+    'part_1',
+    'part_2',
+    'part_3',
+    'part_4',
+    'part_5',
+    'part_6',
+    'part_7',
+    'part_8',
 ]
+
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
