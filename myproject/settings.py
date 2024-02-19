@@ -20,6 +20,7 @@ INSTALLED_APPS = [
     'cybersecurity',
     'home',
     'part_1',
+    'personal_projects',
     'part_2',
     'part_3',
     'part_4',

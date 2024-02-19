@@ -13,5 +13,6 @@ urlpatterns = [
     path('part_6/', include('part_6.urls')),
     path('part_7/', include('part_7.urls')),
     path('part_8/', include('part_8.urls')),
+    path('personal_projects/', include('personal_projects.urls')),
     
 ]

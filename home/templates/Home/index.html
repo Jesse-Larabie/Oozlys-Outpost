@@ -17,11 +17,11 @@
   <a href="javascript:void(0)" onclick="w3_close()" class="w3-bar-item w3-button w3-display-topright w3-text-teal">Close
     <i class="fa fa-remove"></i>
   </a>
-  <a href="#" class="w3-bar-item w3-button">Link 1</a>
-  <a href="#" class="w3-bar-item w3-button">Link 2</a>
-  <a href="#" class="w3-bar-item w3-button">Link 3</a>
-  <a href="#" class="w3-bar-item w3-button">Link 4</a>
-  <a href="#" class="w3-bar-item w3-button">Link 5</a>
+  <a href="perosnal_projects" class="w3-bar-item w3-button">Bondamf spot</a>
+  <a href="#" class="w3-bar-item w3-button">Bondamf spot</a>
+  <a href="#" class="w3-bar-item w3-button">Bondamf spot</a>
+  <a href="#" class="w3-bar-item w3-button">Oozly spot</a>
+  <a href="#" class="w3-bar-item w3-button">Oozly spot</a>
 </nav>
 
 <!-- Navbar -->
@@ -29,10 +29,11 @@
  <div class="w3-bar w3-theme-d2 w3-left-align">
   <a class="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-right w3-hover-white w3-theme-d2" href="javascript:void(0);" onclick="openNav()"><i class="fa fa-bars"></i></a>
   <a href="/cybersecurity/" class="w3-bar-item w3-button w3-teal"><i class="fa fa-home w3-margin-right"></i>Home</a>
-  <a href="#team" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Team</a>
-  <a href="#work" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Work</a>
-  <a href="#pricing" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Price</a>
-  <a href="#contact" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Contact</a>
+   <!--<a href="Linux" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Linux</a>
+  <a href="Videos" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Videos</a>
+  <a href="links" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Links</a>
+  <a href="networks" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Networks</a> -->
+  <a href="personal_projects" class="w3-bar-item w3-button w3-hide-small w3-hover-white">personal projects</a>
     <div class="w3-dropdown-hover w3-hide-small"> 
     <button class="w3-button" title="Notifications">Dropdown <i class="fa fa-caret-down"></i></button>     
     <div class="w3-dropdown-content w3-card-4 w3-bar-block">
@@ -46,17 +47,18 @@
 
   <!-- Navbar on small screens -->
   <div id="navDemo" class="w3-bar-block w3-theme-d2 w3-hide w3-hide-large w3-hide-medium">
-    <a href="#team" class="w3-bar-item w3-button">Team</a>
-    <a href="#work" class="w3-bar-item w3-button">Work</a>
-    <a href="#pricing" class="w3-bar-item w3-button">Price</a>
-    <a href="#contact" class="w3-bar-item w3-button">Contact</a>
+    <a href="'linux'" class="w3-bar-item w3-button">Linux</a>
+    <a href="'videos'" class="w3-bar-item w3-button">Videos</a>
+    <a href="'pricing'" class="w3-bar-item w3-button">Links</a>
+    <a href="'networks' %}" class="w3-bar-item w3-button">Networks</a> 
+    <a href="personal_projects/" class="w3-bar-item w3-button">Personal Projects</a>
     <a href="#" class="w3-bar-item w3-button">Search</a>
   </div>
 </div>
 
 <!-- Image Header -->
 <div class="w3-display-container w3-animate-opacity">
-  <img src={% static 'images/header.webp' %} alt="boat" style="width:100%;min-height:200px;max-height:300px;">
+  <img src={% static 'images/Header.webp' %} alt="boat" style="width:100%;min-height:200px;max-height:300px;">
   <div class="w3-container w3-display-bottomleft w3-margin-bottom">  
     <button onclick="document.getElementById('id01').style.display='block'" class="w3-button w3-xlarge w3-theme w3-hover-teal" title="Test3">FAQ</button>
   </div>
@@ -75,7 +77,7 @@
       <p>Jesselarabie1@gmail.com<a class="w3-text-teal" href="/w3css/default.asp"></p>
     </div>
     <footer class="w3-container w3-teal">
-      <p>The Oasis</p>
+      <p>The Outpost</p>
     </footer>
   </div>
 </div>
@@ -89,7 +91,7 @@
 <!-- Team Container -->
 <div class="w3-container w3-padding-64 w3-center" id="team">
     <h2>Table Of Contents</h2>
-    <p>Welcome to the Cyber security section of the Oasis!</p>
+    <p>Welcome to the Cyber security section of the Oautpost!</p>
     <div class="w3-row"><br>
         <div class="w3-quarter">
           <a href="{% url 'part_1' %}">
@@ -101,7 +103,7 @@
         <div class="w3-quarter">
             <a href="{% url 'part_2' %}">
               <img src={% static "images/castle.webp" %} alt="Boss3" style="width:45%" class="w3-circle w3-hover-opacity">
-              <h3>part 2</h3>
+              <h3>Part 2</h3>
               <p>Principles of Information Security:</p>
         </div>
         
@@ -133,7 +135,7 @@
             <div class="w3-quarter">
               <a href="{% url 'part_6' %}">
                 <img src={% static "images/cmdline2.webp" %} alt="Boss3" style="width:45%" class="w3-circle w3-hover-opacity">
-                <h3>part 6</h3>
+                <h3>Part 6</h3>
                 <p>Security Policies and Legal Frameworks:</p>
             </div>
             
@@ -143,178 +145,40 @@
                 <h3>Part 7</h3>
                 <p>Cryptography and Access Control:</p>
             </div>
-            
-            <div class="w3-quarter">
+            <div class="w3-quarter" style="margin-bottom: 110px;">
               <a href="{% url 'part_8' %}">
-                <img src={% static "images/weird.webp" %} alt="Boss4" style="width:45%" class="w3-circle w3-hover-opacity">
-                <h3>Part 8</h3>
-                <p>Incident Response and Disaster Recovery:</p>
-            </div>
-            
-            <div class="w3-quarter">
-              <img src={% static "images/cool.webp" %} alt="Boss1" style="width:45%" class="w3-circle w3-hover-opacity">
-              <h3>Jesse Larabie</h3>
+                  <img src="{% static "images/weird.webp" %}" alt="Boss4" style="width:45%" class="w3-circle w3-hover-opacity">
+                  <h3>Part 8</h3>
+                  <p>Incident Response and Disaster Recovery:</p>
+              </a>
+          </div>
+          
+          <div class="w3-half" style="margin-top: 00px;">
+              <img src="{% static "images/wizard.png" %}" alt="Boss1" style="width:45%" class="w3-circle w3-hover-opacity">
+              <a href="{% url 'part_1' %}">
+                  <h3>Jesse Larabie</h3>
+                  <p>Web Designer & Cyber security</p>
+                  <p>Expert schumer</p>
+              </a>
+          </div>
+
+            <div class="w3-half">
+              <img src={% static "images/nukee.webp" %} alt="Boss1" style="width:45%" class="w3-circle w3-hover-opacity">
+              <a href="{% url 'part_1' %}">
+              <h3>Johnathan Hienrick</h3>
               <p>Web Designer & Cyber security</p>
+              <p>Expert gooner</p>
             </div>
-            
-            
         </div>
     </div>
     
-    <!-- Showcase Row -->
-    <div class="w3-row-padding w3-padding-64 w3-theme-l1" id="work">
-        
-        <div class="w3-quarter">
-            <h2>PlaceHolder</h2>
-            <p>Here are some useful resources for someone starting out fresh in the It field! (Cyber security is a hefty field and requires a lot of ground work knowledge) <i class="fa fa-smile-o"></i></p>
-</div>
-
-<div class="w3-quarter">
-<div class="w3-card w3-white">
-  <img src="/w3images/snow.jpg" alt="Snow" style="width:100%">
-  <div class="w3-container">
-  <h3></h3>
-  <h4>Trade</h4>
-  <p></p>
-  <p></p>
-  </div>
-  </div>
-</div>
-
-<div class="w3-quarter">
-<div class="w3-card w3-white">
-  <img src="/w3images/lights.jpg" alt="Lights" style="width:100%">
-  <div class="w3-container">
-  <h3></h3>
-  <h4>Trade</h4>
-  <p></p>
-  <p></p>
-  <p></p>
-  </div>
-  </div>
-</div>
-
-<div class="w3-quarter">
-<div class="w3-card w3-white">
-  <img src="/w3images/mountains.jpg" alt="Mountains" style="width:100%">
-  <div class="w3-container">
-  <h3>Customer 3</h3>
-  <h4>Trade</h4>
-  <p></p>
-  <p></p>
-  <p></p>
-  <p></p>
-  </div>
-  </div>
-</div>
-
-</div>
-
-
-<!-- Pricing Row 
-<div class="w3-row-padding w3-center w3-padding-64" id="pricing">
-    <h2>PRICING</h2>
-    <p>Choose a pricing plan that fits your needs.</p><br>
-    <div class="w3-third w3-margin-bottom">
-      <ul class="w3-ul w3-border w3-hover-shadow">
-        <li class="w3-theme">
-          <p class="w3-xlarge">Basic</p>
-        </li>
-        <li class="w3-padding-16"><b>10GB</b> Storage</li>
-        <li class="w3-padding-16"><b>10</b> Emails</li>
-        <li class="w3-padding-16"><b>10</b> Domains</li>
-        <li class="w3-padding-16"><b>Endless</b> Support</li>
-        <li class="w3-padding-16">
-          <h2 class="w3-wide"><i class="fa fa-usd"></i> 10</h2>
-          <span class="w3-opacity">per month</span>
-        </li>
-        <li class="w3-theme-l5 w3-padding-24">
-          <button class="w3-button w3-teal w3-padding-large"><i class="fa fa-check"></i> Sign Up</button>
-        </li>
-      </ul>
-    </div>
-
-    <div class="w3-third w3-margin-bottom">
-      <ul class="w3-ul w3-border w3-hover-shadow">
-        <li class="w3-theme-l2">
-          <p class="w3-xlarge">Pro</p>
-        </li>
-        <li class="w3-padding-16"><b>25GB</b> Storage</li>
-        <li class="w3-padding-16"><b>25</b> Emails</li>
-        <li class="w3-padding-16"><b>25</b> Domains</li>
-        <li class="w3-padding-16"><b>Endless</b> Support</li>
-        <li class="w3-padding-16">
-          <h2 class="w3-wide"><i class="fa fa-usd"></i> 25</h2>
-          <span class="w3-opacity">per month</span>
-        </li>
-        <li class="w3-theme-l5 w3-padding-24">
-          <button class="w3-button w3-teal w3-padding-large"><i class="fa fa-check"></i> Sign Up</button>
-        </li>
-      </ul>
-    </div>
-
-    <div class="w3-third w3-margin-bottom">
-      <ul class="w3-ul w3-border w3-hover-shadow">
-        <li class="w3-theme">
-          <p class="w3-xlarge">Premium</p>
-        </li>
-        <li class="w3-padding-16"><b>50GB</b> Storage</li>
-        <li class="w3-padding-16"><b>50</b> Emails</li>
-        <li class="w3-padding-16"><b>50</b> Domains</li>
-        <li class="w3-padding-16"><b>Endless</b> Support</li>
-        <li class="w3-padding-16">
-          <h2 class="w3-wide"><i class="fa fa-usd"></i> 50</h2>
-          <span class="w3-opacity">per month</span>
-        </li>
-        <li class="w3-theme-l5 w3-padding-24">
-          <button class="w3-button w3-teal w3-padding-large"><i class="fa fa-check"></i> Sign Up</button>
-        </li>
-      </ul>
-    </div>
-</div> -->
-
-<!-- Contact Container -->
-<div class="w3-container w3-padding-64 w3-theme-l5" id="contact">
-  <div class="w3-row">
-    <div class="w3-col m5">
-    <div class="w3-padding-16"><span class="w3-xlarge w3-border-teal w3-bottombar">Contact Us</span></div>
-      <h3>Address</h3>
-      <p>I appreciate any contribution!</p>
-      <p><i class="fa fa-map-marker w3-text-teal w3-xlarge"></i> Canada, Alberta</p>
-      <p><i class="fa fa-phone w3-text-teal w3-xlarge"></i>  +1-403-489-9803</p>
-      <p><i class="fa fa-envelope-o w3-text-teal w3-xlarge"></i>  Jesselarabie1@gmail.com</p>
-    </div>
-    <div class="w3-col m7">
-      <form class="w3-container w3-card-4 w3-padding-16 w3-white" action="/action_page.php" target="_blank">
-      <div class="w3-section">      
-        <label>Name</label>
-        <input class="w3-input" type="text" name="Name" required>
-      </div>
-      <div class="w3-section">      
-        <label>Email</label>
-        <input class="w3-input" type="text" name="Email" required>
-      </div>
-      <div class="w3-section">      
-        <label>Message</label>
-        <input class="w3-input" type="text" name="Message" required>
-      </div>  
-      <input class="w3-check" type="checkbox" checked name="Like">
-      <label>I Like it!</label>
-      <button type="submit" class="w3-button w3-right w3-theme">Send</button>
-      </form>
-    </div>
-  </div>
-</div>
-
-
-<!-- Footer -->
 <footer class="w3-container w3-padding-32 w3-theme-d1 w3-center">
   <h4>Follow Us</h4>
-  <!-- <a class="w3-button w3-large w3-teal" href="javascript:void(0)" title="Facebook"><i class="fa fa-facebook"></i></a> -->
-  <!-- <a class="w3-button w3-large w3-teal" href="javascript:void(0)" title="Twitter"><i class="fa fa-twitter"></i></a> -->
-  <!-- <a class="w3-button w3-large w3-teal" href="javascript:void(0)" title="Google +"><i class="fa fa-google-plus"></i></a> -->
-  <!-- <a class="w3-button w3-large w3-teal" href="javascript:void(0)" title="Google +"><i class="fa fa-instagram"></i></a> -->
-  <a class="w3-button w3-large w3-teal w3-hide-small" href="https://www.linkedin.com/in/jesse-larabie/" title="Linkedin"><i class="fa fa-linkedin"></i></a>
+  <!--<a class="w3-button w3-large w3-teal" href="javascript:void(0)" title="Facebook"><i class="fa fa-facebook"></i></a> 
+  <a class="w3-button w3-large w3-teal" href="javascript:void(0)" title="Twitter"><i class="fa fa-twitter"></i></a> 
+   <a class="w3-button w3-large w3-teal" href="" title="Google +"><i class="fa fa-google-plus"></i></a> -->
+   <a class="w3-button w3-large w3-teal" href="https://www.instagram.com/reel/C2-fY2NOjVC/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==" title="Google +"><i class="fa fa-instagram"></i></a> 
+  <a class="w3-button w3-large w3-teal " href="https://www.linkedin.com/in/jesse-larabie/" title="Linkedin"><i class="fa fa-linkedin"></i></a>
 
   <div style="position:relative;bottom:100px;z-index:1;" class="w3-tooltip w3-right">
     <span class="w3-text w3-padding w3-teal w3-hide-small">Go To Top</span>   
