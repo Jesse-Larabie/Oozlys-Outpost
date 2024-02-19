@@ -10,13 +10,53 @@ http://localhost:8000/cybersecurity/
 
 Roadmap for Oozly's Outpost:
 
-1.I need to create 8 sections for the different parts of the course that are outlined in the cyber security page, I need to figure out if all 8 of these will be there own app in django or in one, They need to all be linked to the cyber security index file.
+1.Compelete the  home page
 
-2.I need to fix the homepage and add more info and things to interact with, the button on the top left needs a link among other things. 
+2.add more content
 
-3.need to make the format for both pages the same.  
+3.Format the paragraphs better in html, (Bold letters paragraphing etc,)
 
-4. remove the contact us form for preferably the cyber security page and only have it for the home page.
+4.create a better roadmap
+
+
+
+To upload changes to the site: 
+Clone the Repository to Your Local Machine:
+
+Once your repository is created, you'll see instructions on how to clone it to your local machine. Copy the URL provided.
+Open Terminal (or Command Prompt on Windows):
+
+Navigate to the directory where you want to store your project files using the cd command.
+Clone the Repository:
+
+In the terminal, use the git clone command followed by the repository URL you copied earlier.
+Example: git clone https://github.com/your-username/repository-name.git
+Copy Your HTML File:
+
+Place your HTML file inside the cloned repository folder on your local machine.
+Add, Commit, and Push Your Changes:
+
+Navigate into the cloned repository folder using the cd command.
+Use the git status command to see the changes you've made.
+Add your HTML file to the staging area using the git add command.
+Commit your changes using the git commit command with a descriptive message.
+Push your changes to GitHub using the git push command.
+Example:
+bash
+Copy code
+git add .
+git commit -m "Add HTML file"
+git push origin main
+Verify on GitHub:
+
+Go back to your repository on the GitHub website, and you should see your HTML file listed there.
+
+
+
+
+
+
+
 
 
 
