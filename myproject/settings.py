@@ -8,8 +8,11 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-w(&l7)f2f9dl$ko9upy=b32baw%4a!*(_)_!7))u=bc@vlo2-('
 
 DEBUG = True
-ALLOWED_HOSTS = ['ab17-2604-3d09-2085-e700-94fd-41d7-f4a9-3896.ngrok-free.app', 'localhost', '127.0.0.1']
-
+ALLOWED_HOSTS = [
+    'd96e-2604-3d09-2085-e700-f419-a300-561-2b87.ngrok-free.app',
+    'localhost',
+    '127.0.0.1',
+]
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',

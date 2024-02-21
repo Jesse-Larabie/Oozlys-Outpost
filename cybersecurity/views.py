@@ -1,5 +1,4 @@
 from django.shortcuts import render
 
-# In cybersecurity/views.py
-def cybersecurity_index(request):
+def index(request):
     return render(request, 'cybersecurity/index.html')
