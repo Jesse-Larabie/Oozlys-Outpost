@@ -1,7 +1,7 @@
-from django.urls import path
-from . import views
+from django.urls import path, include
 
 urlpatterns = [
-    path('', views.index, name='index'),
-    # Other URL patterns for the cybersecurity app
+    path('', include('home.urls')),  # Include URLs from the 'home' app
+    path('cybersecurity/', include('cybersecurity.urls')),  # Include URLs from the 'cybersecurity' app
+    # Other paths...
 ]

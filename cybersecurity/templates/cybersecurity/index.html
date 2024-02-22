@@ -58,11 +58,71 @@
 
 <!-- Image Header -->
 <div class="w3-display-container w3-animate-opacity">
-  <img src={% static 'images/Header.webp' %} alt="boat" style="width:100%;min-height:200px;max-height:300px;">
+  <img src={% static 'images/Header.webp' %} alt="boat" style="width:100%;min-height:400px;max-height:400px;">
   <div class="w3-container w3-display-bottomleft w3-margin-bottom">  
     <button onclick="document.getElementById('id01').style.display='block'" class="w3-button w3-xlarge w3-theme w3-hover-teal" title="Test3">FAQ</button>
   </div>
 </div>
+
+<!-- Sound -->
+<audio id="myAudio" loop muted>
+  <!-- Default song -->
+  <source id="audioSource" src="{% static 'images/minecraftsong1.mp3' %}" type="audio/mpeg">
+  Your browser does not support the audio element.
+</audio>
+
+<!-- Buttons to toggle and choose songs -->
+<button onclick="toggleAudio()" class="w3-button w3-xlarge w3-theme w3-hover-teal" title="Toggle Audio">Toggle Audio</button>
+<button onclick="openSongPopup()" class="w3-button w3-xlarge w3-theme w3-hover-teal" title="Choose Song">Choose Song</button>
+
+<!-- Modal popup for song selection -->
+<div id="songModal" class="w3-modal">
+  <div class="w3-modal-content w3-card-4">
+    <header class="w3-container w3-teal">
+      <span onclick="closeSongPopup()" class="w3-button w3-teal w3-display-topright">&times;</span>
+      <h2>Choose a Song</h2>
+    </header>
+    <div class="w3-container">
+      <p>Select a song:</p>
+      <ul>
+        <li><a href="#" onclick="changeSong('{% static 'images/minecraftsong1.mp3' %}'); return false;">Wet Hands</a></li>
+        <li><a href="#" onclick="changeSong('{% static 'images/song2.mp3' %}'); return false;">Song 2</a></li>
+        
+        <!-- Add more songs as needed -->
+      </ul>
+    </div>
+  </div>
+</div>
+
+<script>
+  function toggleAudio() {
+    var audio = document.getElementById("myAudio");
+    if (audio.paused) {
+      audio.play();
+      audio.muted = false; // Unmute the audio when it starts playing
+    } else {
+      audio.pause();
+    }
+  }
+
+  function openSongPopup() {
+    document.getElementById("songModal").style.display = "block";
+  }
+
+  function closeSongPopup() {
+    document.getElementById("songModal").style.display = "none";
+  }
+
+  function changeSong(songUrl) {
+    var audio = document.getElementById("myAudio");
+    audio.src = songUrl;
+    audio.play();
+    audio.muted = false; // Unmute the audio when it starts playing
+    closeSongPopup(); // Close the song selection modal
+  }
+</script>
+
+
 
 <!-- Modal -->
 <div id="id01" class="w3-modal">
