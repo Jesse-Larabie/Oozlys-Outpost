@@ -1,5 +1,5 @@
 # Portfolio-site
-My website showcasing various projects and things that I have created!
+Website showcasing various projects and things that I have created!
 
 
 -To start the website go type cd "C:\Users\jesse\Desktop\Oozlys Website\myproject" then python manage.py runserver. Navigate to http://127.0.0.1:8000/.

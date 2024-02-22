@@ -18,32 +18,16 @@
     <a href="javascript:void(0)" onclick="w3_close()" class="w3-bar-item w3-button w3-display-topright w3-text-teal">Close
       <i class="fa fa-remove"></i>
     </a>
-    <a href="personal_projects" class="w3-bar-item w3-button">Bondamf spot</a>
-    <a href="#" class="w3-bar-item w3-button">Bondamf spot</a>
-    <a href="#" class="w3-bar-item w3-button">Bondamf spot</a>
-    <a href="#" class="w3-bar-item w3-button">Oozly spot</a>
-    <a href="#" class="w3-bar-item w3-button">Oozly spot</a>
+    
   </nav>
   
   <!-- Navbar -->
   <div class="w3-top">
     <div class="w3-bar w3-theme-d2 w3-left-align">
       <a class="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-right w3-hover-white w3-theme-d2" href="javascript:void(0);" onclick="openNav()"><i class="fa fa-bars"></i></a>
-      <!--<a href="/home/" class="w3-bar-item w3-button w3-teal"><i class="fa fa-home w3-margin-right"></i></a>
-        <a href="Linux" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Linux</a>
-        <a href="Videos" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Videos</a>
-        <a href="links" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Links</a>
-        <a href="networks" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Networks</a> -->
-        <a href="personal_projects" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Personal Projects</a>
         <div class="w3-dropdown-hover w3-hide-small"> 
-          <button class="w3-button" title="Notifications">Dropdown <i class="fa fa-caret-down"></i></button>     
-          <div class="w3-dropdown-content w3-card-4 w3-bar-block">
-            <a href="#" class="w3-bar-item w3-button">Link</a>
-            <a href="#" class="w3-bar-item w3-button">Link</a>
-            <a href="#" class="w3-bar-item w3-button">Link</a>
           </div>
         </div>
-        <a href="#" class="w3-bar-item w3-button w3-hide-small w3-right w3-hover-teal" title="Search"><i class="fa fa-search"></i></a>
       </div>
       
       <!-- Navbar on small screens -->
@@ -66,7 +50,7 @@
 <!-- Sound -->
 <audio id="myAudio" loop muted>
   <!-- Default song -->
-  <source id="audioSource" src="{% static 'images/minecraftsong1.mp3' %}" type="audio/mpeg">
+  <source id="audioSource" src="{% static 'images/wethands.mp3' %}" type="audio/mpeg">
   Your browser does not support the audio element.
 </audio>
 
@@ -84,16 +68,29 @@
     <div class="w3-container">
       <p>Select a song:</p>
       <ul>
-        <li><a href="#" onclick="changeSong('{% static 'images/minecraftsong1.mp3' %}'); return false;">Wet Hands</a></li>
-        <li><a href="#" onclick="changeSong('{% static 'images/song2.mp3' %}'); return false;">Song 2</a></li>
-        
-        <!-- Add more songs as needed -->
+        <li><a href="#" onclick="changeSong('{% static 'images/aria_math.mp3' %}'); return false;">Aria Math</a></li>
+        <li><a href="#" onclick="changeSong('{% static 'images/wethands.mp3' %}'); return false;">Wet Hands</a></li>
+        <li><a href="#" onclick="changeSong('{% static 'images/haggstrom.mp3' %}'); return false;">Haggstrom</a></li>
+        <li><a href="#" onclick="changeSong('{% static 'images/haunt_muskie.mp3' %}'); return false;">Haunt Muskie</a></li>
+        <li><a href="#" onclick="changeSong('{% static 'images/subwoofer.mp3' %}'); return false;">Subwoofer Lullaby</a></li>
+    
       </ul>
     </div>
   </div>
 </div>
 
 <script>
+  // Function to retrieve the selected song from browser storage
+  function getSelectedSong() {
+    return localStorage.getItem('selectedSong');
+  }
+
+  // Function to set the selected song to browser storage
+  function setSelectedSong(songUrl) {
+    localStorage.setItem('selectedSong', songUrl);
+  }
+
+  // Function to toggle the audio playback
   function toggleAudio() {
     var audio = document.getElementById("myAudio");
     if (audio.paused) {
@@ -104,23 +101,37 @@
     }
   }
 
+  // Function to open the song selection modal
   function openSongPopup() {
     document.getElementById("songModal").style.display = "block";
   }
 
+  // Function to close the song selection modal
   function closeSongPopup() {
     document.getElementById("songModal").style.display = "none";
   }
 
+  // Function to change the selected song
   function changeSong(songUrl) {
     var audio = document.getElementById("myAudio");
     audio.src = songUrl;
     audio.play();
     audio.muted = false; // Unmute the audio when it starts playing
+    setSelectedSong(songUrl); // Save the selected song to browser storage
     closeSongPopup(); // Close the song selection modal
   }
-</script>
 
+  // When the page loads, check if there's a selected song and play it
+  window.onload = function() {
+    var selectedSong = getSelectedSong();
+    if (selectedSong) {
+      var audio = document.getElementById("myAudio");
+      audio.src = selectedSong;
+      audio.play();
+      audio.muted = false; // Unmute the audio when it starts playing
+    }
+  };
+</script>
 
     <!-- Modal -->
     <div id="id01" class="w3-modal">
@@ -141,12 +152,16 @@
       </div>
       
       
+      
       <!-- Container -->
       
       <div class="w3-container" style="position:relative">
         <a onclick="w3_open()" class="w3-button w3-xlarge w3-circle w3-teal"
         style="position:absolute;top:-28px;right:24px">+</a>
       </div>
+      
+      
+      
       <!-- Team Container -->
       <style>
         .w3-row {
@@ -183,152 +198,173 @@
         <div class="w3-row">
           <br>
           
-          <!-- First row -->
-          <div class="w3-quarter">
-            <a href="{% url 'cybersecurity' %}">
-              <img src="{% static 'images/cloud2.webp' %}" alt="Boss2" style="width:45%" class="w3-circle w3-hover-opacity">
-              <h3><strong>Cyber security basics</strong></h3>
-              <p>Look at our 8 part course for cyber security!</p>
-            </a>
+              
+              <!-- First row -->
+              <div class="w3-quarter">
+                <a href="{% url 'cybersecurity' %}">
+                  <img src="{% static 'images/cloud2.webp' %}" alt="Boss2" style="width:45%" class="w3-circle w3-hover-opacity">
+                  <h3><strong>Cyber security basics</strong></h3>
+                  <p>Look at our 8 part course for cyber security!</p>
+                </a>
+              </div>
+          
+              <div class="w3-quarter">
+                <a href="{% url 'windows_basics' %}">
+                  <img src="{% static 'images/windows.webp' %}" alt="Boss2" style="width:45%" class="w3-circle w3-hover-opacity">
+                  <h3><strong>Windows basics</strong></h3>
+                  <p>Windows Fundamentals!</p>
+                </a>
+              </div>
+          
+              <div class="w3-quarter">
+                <a href="{% url 'part_4' %}">
+                  <img src="{% static 'images/penguin.jpg' %}" alt="Boss4" style="width:45%" class="w3-circle w3-hover-opacity">
+                  <h3><strong>Linux Basics</strong></h3>
+                  <p>Fundamentals of linux</p>
+                </a>
+              </div>
+          
+              <div class="w3-quarter">
+                <a href="{% url 'personal_projects' %}">
+                  <img src="{% static 'images/penguin.jpg' %}" alt="Boss3" style="width:45%" class="w3-circle w3-hover-opacity">
+                  <h3><strong>Advanced Linux</strong></h3>
+                  <p>Advanced Linux</p>
+                </a>
+              </div>
+              
+              <!-- Second row -->
+              <div class="w3-row"><br>
+          
+                <div class="w3-quarter">
+                  <a href="{% url 'personal_projects' %}">
+                    <img src="{% static 'images/c.svg' %}" alt="Boss3" style="width:45%" class="w3-circle w3-hover-opacity">
+                    <h3><strong>C++</strong></h3>
+                    <p>Come and look at our projects!</p>
+                  </a>
+                </div>
+          
+                <div class="w3-quarter">
+                  <a href="{% url 'part_6' %}">
+                    <img src="{% static 'images/python.webp' %}" alt="Boss3" style="width:45%" class="w3-circle w3-hover-opacity">
+                    <h3><strong>Python</strong></h3>
+                    <p>Looks at our credentials or lackof!</p>
+                  </a>
+                </div>
+          
+                <div class="w3-quarter">
+                  <a href="{% url 'part_7' %}">
+                    <img src="{% static 'images/javascript.png' %}" alt="Boss3" style="width:45%" class="w3-circle w3-hover-opacity">
+                    <h3><strong>Javascript</strong></h3>
+                    <p>Self explanatory!</p>
+                  </a>
+                </div>
+          
+                <div class="w3-quarter">
+                  <a href="{% url 'part_8' %}">
+                    <img src="{% static 'images/image.webp' %}" alt="Boss4" style="width:45%" class="w3-circle w3-hover-opacity">
+                    <h3><strong>Go</strong></h3>
+                    <p>Go programming language</p>
+                  </a>
+                </div>
+          
+              </div>
+          
+              <!-- Third row -->
+              <div class="w3-row"><br>
+          
+                <div class="w3-quarter">
+                  <a href="{% url 'personal_projects' %}">
+                    <img src="{% static 'images/rust.jpg' %}" alt="Boss3" style="width:45%" class="w3-circle w3-hover-opacity">
+                    <h3><strong>Rust</strong></h3>
+                    <p>Come and look at our projects!</p>
+                  </a>
+                </div>
+          
+                <div class="w3-quarter">
+                  <a href="{% url 'part_6' %}">
+                    <img src="{% static 'images/html.png' %}" alt="Boss3" style="width:45%" class="w3-circle w3-hover-opacity">
+                    <h3><strong>HTML</strong></h3>
+                    <p>HTML basics</p>
+                  </a>
+                </div>
+          
+                <div class="w3-quarter">
+                  <a href="{% url 'part_7' %}">
+                    <img src="{% static 'images/skull.png' %}" alt="Boss3" style="width:45%" class="w3-circle w3-hover-opacity">
+                    <h3><strong>Exploits</strong></h3>
+                    <p>Cyber Exploits</p>
+                  </a>
+                </div>
+          
+                <div class="w3-quarter">
+                  <a href="{% url 'part_8' %}">
+                    <img src="{% static 'images/tool.png' %}" alt="Boss4" style="width:45%" class="w3-circle w3-hover-opacity">
+                    <h3><strong>Cybersecurity Tools</strong></h3>
+                    <p>various tools and techniques used in cybersecurity</p>
+                  </a>
+                </div>
+          
+              </div>
+          
+              <!-- Fourth row -->
+              <div class="w3-row"><br>
+          
+                <div class="w3-quarter">
+                  <a href="{% url 'personal_projects' %}">
+                    <img src="{% static 'images/ai.webp' %}" alt="Boss3" style="width:45%" class="w3-circle w3-hover-opacity">
+                    <h3><strong>Projects</strong></h3>
+                    <p>Come and look at our projects!</p>
+                  </a>
+                </div>
+          
+                <div class="w3-quarter">
+                  <a href="{% url 'part_6' %}">
+                    <img src="{% static 'images/resume.webp' %}" alt="Boss3" style="width:45%" class="w3-circle w3-hover-opacity">
+                    <h3><strong>Resume</strong></h3>
+                    <p>Looks at our credentials or lackof!</p>
+                  </a>
+                </div>
+          
+                <div class="w3-quarter">
+                  <a href="{% url 'part_7' %}">
+                    <img src="{% static 'images/castle2.webp' %}" alt="Boss3" style="width:45%" class="w3-circle w3-hover-opacity">
+                    <h3><strong>Blog/Tutorials</strong></h3>
+                    <p>Self explanatory!</p>
+                  </a>
+                </div>
+          
+                <div class="w3-quarter">
+                  <a href="{% url 'part_8' %}">
+                    <img src="{% static 'images/weird.webp' %}" alt="Boss4" style="width:45%" class="w3-circle w3-hover-opacity">
+                    <h3><strong>About Us</strong></h3>
+                    <p>More info about us!</p>
+                  </a>
+                </div>
+          
+              </div>
+          
+              <!-- Fifth row -->
+              <div class="w3-half" style="margin-top: 00px;">
+                <img src="{% static 'images/wizard.png' %}" alt="Boss1" style="width:45%" class="w3-circle w3-hover-opacity">
+                <a href="{% url 'part_1' %}">
+                  <h3>Jesse Larabie</h3>
+                  <p>Web Designer & Cyber security</p>
+                  <p>Expert schumer</p>
+                </a>
+              </div>
+          
+              <div class="w3-half">
+                <img src="{% static 'images/nukee.webp' %}" alt="Boss1" style="width:45%" class="w3-circle w3-hover-opacity">
+                <a href="{% url 'part_1' %}">
+                  <h3>Johnathan Hienrick</h3>
+                  <p>Web Designer & Cyber security</p>
+                  <p>Expert gooner</p>
+                </a>
+              </div>
+          
+            </div>
           </div>
           
-    
-    <div class="w3-quarter">
-        <a href="{% url 'part_5' %}">
-            <img src="{% static 'images/windows.webp' %}" alt="Boss2" style="width:45%" class="w3-circle w3-hover-opacity">
-            <h3><strong>Windows basics</strong></h3>
-            <p>Windows Fundamentals!</p>
-        </a>
-    </div>
-    
-
-      <div class="w3-quarter">
-          <a href="{% url 'part_4' %}">
-              <img src="{% static 'images/penguin.jpg' %}" alt="Boss4" style="width:45%" class="w3-circle w3-hover-opacity">
-              <h3><strong>Linux Basics</strong></h3>
-              <p>Fundamentals of linux</p>
-          </a>
-      </div>
-
-      <div class="w3-quarter">
-          <a href="{% url 'personal_projects' %}">
-              <img src="{% static 'images/penguin.jpg' %}" alt="Boss3" style="width:45%" class="w3-circle w3-hover-opacity">
-              <h3><strong>Advanced Linux</strong></h3>
-              <p>Advanced Linux</p>
-          </a>
-      </div>
-  </div>
-  <!-- Second row -->
-  <div class="w3-row">
-    <br>
-
-    <div class="w3-quarter">
-        <a href="{% url 'personal_projects' %}">
-            <img src="{% static 'images/c.svg' %}" alt="Boss3" style="width:45%" class="w3-circle w3-hover-opacity">
-            <h3><strong>C++</strong></h3>
-            <p>Come and look at our projects!</p>
-        </a>
-    </div>
-
-    <div class="w3-quarter">
-        <a href="{% url 'part_6' %}">
-            <img src="{% static 'images/python.webp' %}" alt="Boss3" style="width:45%" class="w3-circle w3-hover-opacity">
-            <h3><strong>Python</strong></h3>
-            <p>Looks at our credentials or lackof!</p>
-        </a>
-    </div>
-
-    <div class="w3-quarter">
-        <a href="{% url 'part_7' %}">
-            <img src="{% static 'images/javascript.png' %}" alt="Boss3" style="width:45%" class="w3-circle w3-hover-opacity">
-            <h3><strong>Javascript</strong></h3>
-            <p>Self explanatory!</p>
-        </a>
-    </div>
-
-    <div class="w3-quarter">
-        <a href="{% url 'part_8' %}">
-            <img src="{% static 'images/image.webp' %}" alt="Boss4" style="width:45%" class="w3-circle w3-hover-opacity">
-            <h3><strong>Go</strong></h3>
-            <p>Go programming language</p>
-        </a>
-    </div>
-</div>
-</div>  
-<!--Third row-->
-<div class="w3-row">
-  <br>
-
-  <div class="w3-quarter">
-      <a href="{% url 'personal_projects' %}">
-          <img src="{% static 'images/rust.jpg' %}" alt="Boss3" style="width:45%" class="w3-circle w3-hover-opacity">
-          <h3><strong>Rust</strong></h3>
-          <p>Come and look at our projects!</p>
-      </a>
-  </div>
-
-  <div class="w3-quarter">
-      <a href="{% url 'part_6' %}">
-          <img src="{% static 'images/html.png' %}" alt="Boss3" style="width:45%" class="w3-circle w3-hover-opacity">
-          <h3><strong>HTML</strong></h3>
-          <p>HTML basics</p>
-      </a>
-  </div>
-
-  <div class="w3-quarter">
-      <a href="{% url 'part_7' %}">
-          <img src="{% static 'images/skull.png' %}" alt="Boss3" style="width:45%" class="w3-circle w3-hover-opacity">
-          <h3><strong>Exploits</strong></h3>
-          <p>Cyber Exploits</p>
-      </a>
-  </div>
-
-  <div class="w3-quarter">
-      <a href="{% url 'part_8' %}">
-          <img src="{% static 'images/tool.png' %}" alt="Boss4" style="width:45%" class="w3-circle w3-hover-opacity">
-          <h3><strong>Cybersecurity Tools and Techniques</strong></h3>
-          <p>various tools and techniques used in cybersecurity</p>
-      </a>
-  </div>
-</div>
-</div>  
-<!--Fourth row-->
-  <div class="w3-row">
-      <br>
-
-      <div class="w3-quarter">
-          <a href="{% url 'personal_projects' %}">
-              <img src="{% static 'images/ai.webp' %}" alt="Boss3" style="width:45%" class="w3-circle w3-hover-opacity">
-              <h3><strong>Projects</strong></h3>
-              <p>Come and look at our projects!</p>
-          </a>
-      </div>
-
-      <div class="w3-quarter">
-          <a href="{% url 'part_6' %}">
-              <img src="{% static 'images/resume.webp' %}" alt="Boss3" style="width:45%" class="w3-circle w3-hover-opacity">
-              <h3><strong>Resume</strong></h3>
-              <p>Looks at our credentials or lackof!</p>
-          </a>
-      </div>
-
-      <div class="w3-quarter">
-          <a href="{% url 'part_7' %}">
-              <img src="{% static 'images/castle2.webp' %}" alt="Boss3" style="width:45%" class="w3-circle w3-hover-opacity">
-              <h3><strong>Blog/Tutorials</strong></h3>
-              <p>Self explanatory!</p>
-          </a>
-      </div>
-
-      <div class="w3-quarter">
-          <a href="{% url 'part_8' %}">
-              <img src="{% static 'images/weird.webp' %}" alt="Boss4" style="width:45%" class="w3-circle w3-hover-opacity">
-              <h3><strong>About Us</strong></h3>
-              <p>More info about us!</p>
-          </a>
-      </div>
-  </div>
-</div>   
 <footer class="w3-container w3-padding-32 w3-theme-d1 w3-center">
   <h4>Follow Us</h4>
   <!--<a class="w3-button w3-large w3-teal" href="javascript:void(0)" title="Facebook"><i class="fa fa-facebook"></i></a> 

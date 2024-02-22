@@ -20,10 +20,10 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'cybersecurity',
     'home',
-    'part_1',
     'personal_projects',
+    'cybersecurity',
+    'part_1',
     'part_2',
     'part_3',
     'part_4',
@@ -31,6 +31,7 @@ INSTALLED_APPS = [
     'part_6',
     'part_7',
     'part_8',
+    'windows_basics',
 ]
 
 

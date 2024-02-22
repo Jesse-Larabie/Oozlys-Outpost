@@ -17,11 +17,11 @@
   <a href="javascript:void(0)" onclick="w3_close()" class="w3-bar-item w3-button w3-display-topright w3-text-teal">Close
     <i class="fa fa-remove"></i>
   </a>
-  <a href="personal_projects" class="w3-bar-item w3-button">Bondamf spot</a>
+  <!--<a href="personal_projects" class="w3-bar-item w3-button">Bondamf spot</a>
   <a href="#" class="w3-bar-item w3-button">Bondamf spot</a>
   <a href="#" class="w3-bar-item w3-button">Bondamf spot</a>
   <a href="#" class="w3-bar-item w3-button">Oozly spot</a>
-  <a href="#" class="w3-bar-item w3-button">Oozly spot</a>
+  <a href="#" class="w3-bar-item w3-button">Oozly spot</a>-->
 </nav>
 
 <!-- Navbar -->
@@ -29,19 +29,7 @@
  <div class="w3-bar w3-theme-d2 w3-left-align">
   <a class="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-right w3-hover-white w3-theme-d2" href="javascript:void(0);" onclick="openNav()"><i class="fa fa-bars"></i></a>
   <a href="/home/" class="w3-bar-item w3-button w3-teal"><i class="fa fa-home w3-margin-right"></i>Home</a>
-   <!--<a href="Linux" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Linux</a>
-  <a href="Videos" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Videos</a>
-  <a href="links" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Links</a>
-  <a href="networks" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Networks</a> -->
-  <a href="personal_projects" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Personal Projects</a>
-    <div class="w3-dropdown-hover w3-hide-small"> 
-    <button class="w3-button" title="Notifications">Dropdown <i class="fa fa-caret-down"></i></button>     
-    <div class="w3-dropdown-content w3-card-4 w3-bar-block">
-      <a href="#" class="w3-bar-item w3-button">Link</a>
-      <a href="#" class="w3-bar-item w3-button">Link</a>
-      <a href="#" class="w3-bar-item w3-button">Link</a>
-    </div>
-  </div>
+
   <a href="#" class="w3-bar-item w3-button w3-hide-small w3-right w3-hover-teal" title="Search"><i class="fa fa-search"></i></a>
  </div>
 
@@ -60,14 +48,17 @@
 <div class="w3-display-container w3-animate-opacity">
   <img src={% static 'images/Header.webp' %} alt="boat" style="width:100%;min-height:400px;max-height:400px;">
   <div class="w3-container w3-display-bottomleft w3-margin-bottom">  
-    <button onclick="document.getElementById('id01').style.display='block'" class="w3-button w3-xlarge w3-theme w3-hover-teal" title="Test3">FAQ</button>
+
   </div>
 </div>
+
+
+
 
 <!-- Sound -->
 <audio id="myAudio" loop muted>
   <!-- Default song -->
-  <source id="audioSource" src="{% static 'images/minecraftsong1.mp3' %}" type="audio/mpeg">
+  <source id="audioSource" src="{% static 'images/wethands.mp3' %}" type="audio/mpeg">
   Your browser does not support the audio element.
 </audio>
 
@@ -85,16 +76,29 @@
     <div class="w3-container">
       <p>Select a song:</p>
       <ul>
-        <li><a href="#" onclick="changeSong('{% static 'images/minecraftsong1.mp3' %}'); return false;">Wet Hands</a></li>
-        <li><a href="#" onclick="changeSong('{% static 'images/song2.mp3' %}'); return false;">Song 2</a></li>
-        
-        <!-- Add more songs as needed -->
+        <li><a href="#" onclick="changeSong('{% static 'images/aria_math.mp3' %}'); return false;">Aria Math</a></li>
+        <li><a href="#" onclick="changeSong('{% static 'images/wethands.mp3' %}'); return false;">Wet Hands</a></li>
+        <li><a href="#" onclick="changeSong('{% static 'images/haggstrom.mp3' %}'); return false;">Haggstrom</a></li>
+        <li><a href="#" onclick="changeSong('{% static 'images/haunt_muskie.mp3' %}'); return false;">Haunt Muskie</a></li>
+        <li><a href="#" onclick="changeSong('{% static 'images/subwoofer.mp3' %}'); return false;">Subwoofer Lullaby</a></li>
+    
       </ul>
     </div>
   </div>
 </div>
 
 <script>
+  // Function to retrieve the selected song from browser storage
+  function getSelectedSong() {
+    return localStorage.getItem('selectedSong');
+  }
+
+  // Function to set the selected song to browser storage
+  function setSelectedSong(songUrl) {
+    localStorage.setItem('selectedSong', songUrl);
+  }
+
+  // Function to toggle the audio playback
   function toggleAudio() {
     var audio = document.getElementById("myAudio");
     if (audio.paused) {
@@ -105,21 +109,36 @@
     }
   }
 
+  // Function to open the song selection modal
   function openSongPopup() {
     document.getElementById("songModal").style.display = "block";
   }
 
+  // Function to close the song selection modal
   function closeSongPopup() {
     document.getElementById("songModal").style.display = "none";
   }
 
+  // Function to change the selected song
   function changeSong(songUrl) {
     var audio = document.getElementById("myAudio");
     audio.src = songUrl;
     audio.play();
     audio.muted = false; // Unmute the audio when it starts playing
+    setSelectedSong(songUrl); // Save the selected song to browser storage
     closeSongPopup(); // Close the song selection modal
   }
+
+  // When the page loads, check if there's a selected song and play it
+  window.onload = function() {
+    var selectedSong = getSelectedSong();
+    if (selectedSong) {
+      var audio = document.getElementById("myAudio");
+      audio.src = selectedSong;
+      audio.play();
+      audio.muted = false; // Unmute the audio when it starts playing
+    }
+  };
 </script>
 
 
@@ -142,6 +161,9 @@
   </div>
 </div>
 
+
+
+
 <!-- Container -->
 
 <div class="w3-container" style="position:relative">
@@ -151,7 +173,7 @@
 <!-- Team Container -->
 <div class="w3-container w3-padding-64 w3-center" id="team">
     <h2>Table Of Contents</h2>
-    <p>Welcome to the Cyber security section of the Oautpost!</p>
+    <p>Welcome to the Cyber security section of the Outpost!</p>
     <div class="w3-row"><br>
         <div class="w3-quarter">
           <a href="{% url 'part_1' %}">
@@ -213,22 +235,7 @@
               </a>
           </div>
           
-          <div class="w3-half" style="margin-top: 00px;">
-              <img src="{% static "images/wizard.png" %}" alt="Boss1" style="width:45%" class="w3-circle w3-hover-opacity">
-              <a href="{% url 'part_1' %}">
-                  <h3>Jesse Larabie</h3>
-                  <p>Web Designer & Cyber security</p>
-                  <p>Expert schumer</p>
-              </a>
-          </div>
-
-            <div class="w3-half">
-              <img src={% static "images/nukee.webp" %} alt="Boss1" style="width:45%" class="w3-circle w3-hover-opacity">
-              <a href="{% url 'part_1' %}">
-              <h3>Johnathan Hienrick</h3>
-              <p>Web Designer & Cyber security</p>
-              <p>Expert gooner</p>
-            </div>
+        
         </div>
     </div>
     
