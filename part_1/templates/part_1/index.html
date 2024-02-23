@@ -5,27 +5,24 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-</head>
-<body>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
+</head>
+
+<body>
+    {% load static %}
 <!-- Navbar (sit on top) -->
 <div class="w3-top">
-    <div class="w3-bar w3-white w3-wide w3-padding w3-card">
-        <a href="/" class="w3-bar-item w3-button"><b>Part-1</b> Introduction to Computer Systems and Networks</a>
+    <div class="w3-bar w3-teal w3-wide w3-padding w3-card">
+        <a href="/" class="w3-bar-item w3-button"><i class="fa fa-home w3-teal"></i> <b>Part-1</b> Introduction to Computer Systems and Networks</a>
+   
         <!-- Float links to the right. Hide them on small screens -->
         <div class="w3-right w3-hide-small">
+        
             <!-- <a href="#contact" class="w3-bar-item w3-button">Contact</a> -->
         </div>
     </div>
 </div>
-
-<!-- Header -->
-<header class="w3-display-container w3-content w3-wide" style="max-width:1500px;" id="home">
-    <img class="w3-image" src="/w3images/architect.jpg" alt="Architecture" width="1500" height="800">
-    <div class="w3-display-middle w3-margin-top w3-center">
-        <h1 class="w3-xxlarge w3-text-white"><span class="w3-padding w3-black w3-opacity-min"><b>BR</b></span> <span class="w3-hide-small w3-text-light-grey">Architects</span></h1>
-    </div>
-</header>
 
 <!-- Page content -->
 <div class="w3-content w3-padding" style="max-width:1564px">
@@ -75,6 +72,95 @@
         </ol>
     </div>
 
+
+    <!-- Sound -->
+<audio id="myAudio" loop muted>
+    <!-- Default song -->
+    <source id="audioSource" src="{% static 'images/wethands.mp3' %}" type="audio/mpeg">
+    Your browser does not support the audio element.
+  </audio>
+  
+  <!-- Buttons to toggle and choose songs -->
+  <!-- Buttons to toggle and choose songs -->
+  <button onclick="toggleAudio()" class="w3-button w3-large w3-teal" title="Toggle Audio">Toggle Audio</button>
+  <button onclick="openSongPopup()" class="w3-button w3-large w3-teal" title="Choose Song">Choose Song</button>
+
+  
+  <!-- Modal popup for song selection -->
+  <div id="songModal" class="w3-modal">
+    <div class="w3-modal-content w3-card-4">
+      <header class="w3-container w3-teal">
+        <span onclick="closeSongPopup()" class="w3-button w3-teal w3-display-topright">&times;</span>
+        <h2>Choose a Song</h2>
+      </header>
+      <div class="w3-container">
+        <p>Select a song:</p>
+        <ul>
+          <li><a href="#" onclick="changeSong('{% static 'images/aria_math.mp3' %}'); return false;">Aria Math</a></li>
+          <li><a href="#" onclick="changeSong('{% static 'images/wethands.mp3' %}'); return false;">Wet Hands</a></li>
+          <li><a href="#" onclick="changeSong('{% static 'images/haggstrom.mp3' %}'); return false;">Haggstrom</a></li>
+          <li><a href="#" onclick="changeSong('{% static 'images/haunt_muskie.mp3' %}'); return false;">Haunt Muskie</a></li>
+          <li><a href="#" onclick="changeSong('{% static 'images/subwoofer.mp3' %}'); return false;">Subwoofer Lullaby</a></li>
+      
+        </ul>
+      </div>
+    </div>
+  </div>
+  
+  <script>
+    // Function to retrieve the selected song from browser storage
+    function getSelectedSong() {
+      return localStorage.getItem('selectedSong');
+    }
+  
+    // Function to set the selected song to browser storage
+    function setSelectedSong(songUrl) {
+      localStorage.setItem('selectedSong', songUrl);
+    }
+  
+    // Function to toggle the audio playback
+    function toggleAudio() {
+      var audio = document.getElementById("myAudio");
+      if (audio.paused) {
+        audio.play();
+        audio.muted = false; // Unmute the audio when it starts playing
+      } else {
+        audio.pause();
+      }
+    }
+  
+    // Function to open the song selection modal
+    function openSongPopup() {
+      document.getElementById("songModal").style.display = "block";
+    }
+  
+    // Function to close the song selection modal
+    function closeSongPopup() {
+      document.getElementById("songModal").style.display = "none";
+    }
+  
+    // Function to change the selected song
+    function changeSong(songUrl) {
+      var audio = document.getElementById("myAudio");
+      audio.src = songUrl;
+      audio.play();
+      audio.muted = false; // Unmute the audio when it starts playing
+      setSelectedSong(songUrl); // Save the selected song to browser storage
+      closeSongPopup(); // Close the song selection modal
+    }
+  
+    // When the page loads, check if there's a selected song and play it
+    window.onload = function() {
+      var selectedSong = getSelectedSong();
+      if (selectedSong) {
+        var audio = document.getElementById("myAudio");
+        audio.src = selectedSong;
+        audio.play();
+        audio.muted = false; // Unmute the audio when it starts playing
+      }
+    };
+  </script>
+  
 <!-- End page content -->
 </div>
 

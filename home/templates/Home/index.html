@@ -9,6 +9,13 @@
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-black.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<head>
+  <title>The Outpost</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+</head>
+
 </head>
 <body id="myPage">
 
@@ -18,9 +25,19 @@
     <a href="javascript:void(0)" onclick="w3_close()" class="w3-bar-item w3-button w3-display-topright w3-text-teal">Close
       <i class="fa fa-remove"></i>
     </a>
-    
   </nav>
   
+   <!-- Navbar on small screens -->
+   <div id="navDemo" class="w3-bar-block w3-theme-d2 w3-hide w3-hide-large w3-hide-medium">
+    <a href="'linux'" class="w3-bar-item w3-button">Linux</a>
+    <a href="'videos'" class="w3-bar-item w3-button">Videos</a>
+    <a href="'pricing'" class="w3-bar-item w3-button">Links</a>
+    <a href="'networks' %}" class="w3-bar-item w3-button">Networks</a> 
+    <a href="personal_projects/" class="w3-bar-item w3-button">Personal Projects</a>
+    <a href="#" class="w3-bar-item w3-button">Search</a>
+  </div>
+</div>
+
   <!-- Navbar -->
   <div class="w3-top">
     <div class="w3-bar w3-theme-d2 w3-left-align">
@@ -30,16 +47,9 @@
         </div>
       </div>
       
-      <!-- Navbar on small screens -->
-      <div id="navDemo" class="w3-bar-block w3-theme-d2 w3-hide w3-hide-large w3-hide-medium">
-        <a href="'linux'" class="w3-bar-item w3-button">Linux</a>
-        <a href="'videos'" class="w3-bar-item w3-button">Videos</a>
-        <a href="'pricing'" class="w3-bar-item w3-button">Links</a>
-        <a href="'networks' %}" class="w3-bar-item w3-button">Networks</a> 
-        <a href="personal_projects/" class="w3-bar-item w3-button">Personal Projects</a>
-        <a href="#" class="w3-bar-item w3-button">Search</a>
-      </div>
+      
     </div>
+    
     <!-- Image Header -->
     <div class="w3-display-container w3-animate-opacity">
       <img src={% static 'images/minecraft.jpg' %} alt="boat" style="width:100%;min-height:400px;max-height:400px;">
@@ -47,16 +57,18 @@
         <button onclick="document.getElementById('id01').style.display='block'" class="w3-button w3-xlarge w3-theme w3-hover-teal" title="Test3">FAQ</button>
       </div>
     </div>
-<!-- Sound -->
+
+    <!-- Sound -->
 <audio id="myAudio" loop muted>
+
   <!-- Default song -->
   <source id="audioSource" src="{% static 'images/wethands.mp3' %}" type="audio/mpeg">
   Your browser does not support the audio element.
 </audio>
 
 <!-- Buttons to toggle and choose songs -->
-<button onclick="toggleAudio()" class="w3-button w3-xlarge w3-theme w3-hover-teal" title="Toggle Audio">Toggle Audio</button>
-<button onclick="openSongPopup()" class="w3-button w3-xlarge w3-theme w3-hover-teal" title="Choose Song">Choose Song</button>
+<button onclick="toggleAudio()" class="w3-button w3-large w3-teal" title="Toggle Audio">Toggle Audio</button>
+<button onclick="openSongPopup()" class="w3-button w3-large w3-teal" title="Choose Song">Choose Song</button>
 
 <!-- Modal popup for song selection -->
 <div id="songModal" class="w3-modal">
@@ -153,7 +165,7 @@
       
       
       
-      <!-- Container -->
+<!-- Container -->
       
       <div class="w3-container" style="position:relative">
         <a onclick="w3_open()" class="w3-button w3-xlarge w3-circle w3-teal"
@@ -162,7 +174,7 @@
       
       
       
-      <!-- Team Container -->
+<!-- Team Container -->
       <style>
         .w3-row {
           display: flex;
@@ -199,7 +211,7 @@
           <br>
           
               
-              <!-- First row -->
+<!-- First row -->
               <div class="w3-quarter">
                 <a href="{% url 'cybersecurity' %}">
                   <img src="{% static 'images/cloud2.webp' %}" alt="Boss2" style="width:45%" class="w3-circle w3-hover-opacity">
@@ -232,7 +244,7 @@
                 </a>
               </div>
               
-              <!-- Second row -->
+<!-- Second row -->
               <div class="w3-row"><br>
           
                 <div class="w3-quarter">
@@ -269,12 +281,12 @@
           
               </div>
           
-              <!-- Third row -->
-              <div class="w3-row"><br>
+ <!-- Third row -->
+<div class="w3-row"><br>
           
                 <div class="w3-quarter">
                   <a href="{% url 'personal_projects' %}">
-                    <img src="{% static 'images/rust.jpg' %}" alt="Boss3" style="width:45%" class="w3-circle w3-hover-opacity">
+                    <img src="{% static 'images/c.svg' %}" alt="Boss3" style="width:45%" class="w3-circle w3-hover-opacity">
                     <h3><strong>Rust</strong></h3>
                     <p>Come and look at our projects!</p>
                   </a>
@@ -284,7 +296,7 @@
                   <a href="{% url 'part_6' %}">
                     <img src="{% static 'images/html.png' %}" alt="Boss3" style="width:45%" class="w3-circle w3-hover-opacity">
                     <h3><strong>HTML</strong></h3>
-                    <p>HTML basics</p>
+                    <p>Looks at our credentials or lackof!</p>
                   </a>
                 </div>
           
@@ -292,21 +304,20 @@
                   <a href="{% url 'part_7' %}">
                     <img src="{% static 'images/skull.png' %}" alt="Boss3" style="width:45%" class="w3-circle w3-hover-opacity">
                     <h3><strong>Exploits</strong></h3>
-                    <p>Cyber Exploits</p>
+                    <p>Use responsibly</p>
                   </a>
                 </div>
           
                 <div class="w3-quarter">
                   <a href="{% url 'part_8' %}">
                     <img src="{% static 'images/tool.png' %}" alt="Boss4" style="width:45%" class="w3-circle w3-hover-opacity">
-                    <h3><strong>Cybersecurity Tools</strong></h3>
-                    <p>various tools and techniques used in cybersecurity</p>
+                    <h3><strong>Tools</strong></h3>
+                    <p>Powerful tools</p>
                   </a>
                 </div>
           
               </div>
-          
-              <!-- Fourth row -->
+<!-- Fourth row -->
               <div class="w3-row"><br>
           
                 <div class="w3-quarter">
@@ -343,35 +354,35 @@
           
               </div>
           
-              <!-- Fifth row -->
-              <div class="w3-half" style="margin-top: 00px;">
-                <img src="{% static 'images/wizard.png' %}" alt="Boss1" style="width:45%" class="w3-circle w3-hover-opacity">
-                <a href="{% url 'part_1' %}">
-                  <h3>Jesse Larabie</h3>
-                  <p>Web Designer & Cyber security</p>
-                  <p>Expert schumer</p>
-                </a>
-              </div>
-          
-              <div class="w3-half">
-                <img src="{% static 'images/nukee.webp' %}" alt="Boss1" style="width:45%" class="w3-circle w3-hover-opacity">
-                <a href="{% url 'part_1' %}">
-                  <h3>Johnathan Hienrick</h3>
-                  <p>Web Designer & Cyber security</p>
-                  <p>Expert gooner</p>
-                </a>
-              </div>
-          
-            </div>
-          </div>
+<!-- Fifth row -->
+<div class="w3-row"><br>
+
+  <div class="w3-half" style="margin-top: 00px;">
+    <img src="{% static 'images/wizard.png' %}" alt="Boss1" style="width:45%" class="w3-circle w3-hover-opacity">
+    <a href="{% url 'part_1' %}">
+      <h3>Jesse Larabie</h3>
+      <p>Web Designer & Cyber security</p>
+      <p>Expert schumer</p>
+    </a>
+  </div>
+
+  <div class="w3-half">
+    <img src="{% static 'images/nukee.webp' %}" alt="Boss1" style="width:45%" class="w3-circle w3-hover-opacity">
+    <a href="{% url 'part_1' %}">
+      <h3>Johnathan Hienrick</h3>
+      <p>Web Designer & Cyber security</p>
+      <p>Expert gooner</p>
+    </a>
+  </div>
+
+</div>
           
 <footer class="w3-container w3-padding-32 w3-theme-d1 w3-center">
   <h4>Follow Us</h4>
-  <!--<a class="w3-button w3-large w3-teal" href="javascript:void(0)" title="Facebook"><i class="fa fa-facebook"></i></a> 
-  <a class="w3-button w3-large w3-teal" href="javascript:void(0)" title="Twitter"><i class="fa fa-twitter"></i></a> 
-   <a class="w3-button w3-large w3-teal" href="" title="Google +"><i class="fa fa-google-plus"></i></a> -->
-   <a class="w3-button w3-large w3-teal" href="https://www.instagram.com/reel/C2-fY2NOjVC/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==" title="Google +"><i class="fa fa-instagram"></i></a> 
-  <a class="w3-button w3-large w3-teal " href="https://www.linkedin.com/in/jesse-larabie/" title="Linkedin"><i class="fa fa-linkedin"></i></a>
+  <a class="w3-button w3-large w3-teal" href="https://www.facebook.com/your-facebook-page" title="Facebook"><i class="fa fa-facebook"></i></a> 
+  <a class="w3-button w3-large w3-teal" href="https://twitter.com/your-twitter-page" title="Twitter"><i class="fa fa-twitter"></i></a> 
+  <a class="w3-button w3-large w3-teal" href="https://www.instagram.com/your-instagram-page" title="Instagram"><i class="fa fa-instagram"></i></a> 
+  <a class="w3-button w3-large w3-teal " href="https://www.linkedin.com/in/your-linkedin-page" title="LinkedIn"><i class="fa fa-linkedin"></i></a>
 
   <div style="position:relative;bottom:100px;z-index:1;" class="w3-tooltip w3-right">
     <span class="w3-text w3-padding w3-teal w3-hide-small">Go To Top</span>   
