@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>W3.CSS Template</title>
+<title>The Outpost</title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
@@ -12,9 +12,17 @@
 <head>
   <title>The Outpost</title>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.3">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 </head>
+<style>
+  /* Add black outline to images */
+  img {
+    outline: 5px solid black; /* Adjust the width as needed */
+  }
+</style>
+
 
 </head>
 <body id="myPage">
@@ -52,7 +60,7 @@
     
     <!-- Image Header -->
     <div class="w3-display-container w3-animate-opacity">
-      <img src={% static 'images/minecraft.jpg' %} alt="boat" style="width:100%;min-height:400px;max-height:400px;">
+      <img src={% static 'images/minecraft.jpg' %} alt="boat" style="width:100%;min-height:200px;max-height:200px;">
       <div class="w3-container w3-display-bottomleft w3-margin-bottom">  
         <button onclick="document.getElementById('id01').style.display='block'" class="w3-button w3-xlarge w3-theme w3-hover-teal" title="Test3">FAQ</button>
       </div>
@@ -145,7 +153,7 @@
   };
 </script>
 
-    <!-- Modal -->
+<!-- Modal -->
     <div id="id01" class="w3-modal">
       <div class="w3-modal-content w3-card-4 w3-animate-top">
         <header class="w3-container w3-teal w3-display-container"> 
@@ -162,18 +170,13 @@
           </footer>
         </div>
       </div>
-      
-      
-      
+           
 <!-- Container -->
       
-      <div class="w3-container" style="position:relative">
-        <a onclick="w3_open()" class="w3-button w3-xlarge w3-circle w3-teal"
-        style="position:absolute;top:-28px;right:24px">+</a>
-      </div>
-      
-      
-      
+<div class="w3-container" style="position:static">
+  <a onclick="w3_open()" class="w3-button w3-xlarge w3-circle w3-teal" style="position:absolute;top:-28px;right:24px">+</a>
+</div>
+    
 <!-- Team Container -->
       <style>
         .w3-row {
@@ -208,213 +211,216 @@
         <h2>Table Of Contents</h2>
         <p>Welcome to the Cyber security section of the Outpost!</p>
         <div class="w3-row">
-          <br>
-          
+          <br>      
               
 <!-- First row -->
-              <div class="w3-quarter">
-                <a href="{% url 'cybersecurity' %}">
-                  <img src="{% static 'images/cloud2.webp' %}" alt="Boss2" style="width:45%" class="w3-circle w3-hover-opacity">
-                  <h3><strong>Cyber security basics</strong></h3>
-                  <p>Look at our 8 part course for cyber security!</p>
-                </a>
-              </div>
-          
-              <div class="w3-quarter">
-                <a href="{% url 'windows_basics' %}">
-                  <img src="{% static 'images/windows.webp' %}" alt="Boss2" style="width:45%" class="w3-circle w3-hover-opacity">
-                  <h3><strong>Windows basics</strong></h3>
-                  <p>Windows Fundamentals!</p>
-                </a>
-              </div>
-          
-              <div class="w3-quarter">
-                <a href="{% url 'part_4' %}">
-                  <img src="{% static 'images/penguin.jpg' %}" alt="Boss4" style="width:45%" class="w3-circle w3-hover-opacity">
-                  <h3><strong>Linux Basics</strong></h3>
-                  <p>Fundamentals of linux</p>
-                </a>
-              </div>
-          
-              <div class="w3-quarter">
-                <a href="{% url 'personal_projects' %}">
-                  <img src="{% static 'images/penguin.jpg' %}" alt="Boss3" style="width:45%" class="w3-circle w3-hover-opacity">
-                  <h3><strong>Advanced Linux</strong></h3>
-                  <p>Advanced Linux</p>
-                </a>
-              </div>
+<div class="w3-quarter">
+  <a href="{% url 'cybersecurity' %}">
+    <img src={% static "images/cyber.png" %} alt="Boss2" style="width:45%" class="w3-circle w3-hover-opacity">
+    <h3><strong>Cyber security basics</strong></h3>
+    <p>Look at our 8 part course for cyber security!</p>
+  </a>
+</div>
+
+<div class="w3-quarter">
+  <a href="{% url 'windows_basics' %}">
+    <img src={% static "images/windows.png" %} alt="Boss2" style="width:45%" class="w3-circle w3-hover-opacity">
+    <h3><strong>Windows basics</strong></h3>
+    <p>Windows Fundamentals!</p>
+  </a>
+</div>
+
+<div class="w3-quarter">
+  <a href="{% url 'part_4' %}">
+    <img src={% static "images/linux.png" %} alt="Boss2" style="width:45%" class="w3-circle w3-hover-opacity">
+    <h3><strong>Linux Basics</strong></h3>
+    <p>Fundamentals of linux</p>
+  </a>
+</div>
+
+<div class="w3-quarter">
+  <a href="{% url 'personal_projects' %}">
+    <img src={% static "images/kalidragon.png" %} alt="Boss2" style="width:45%" class="w3-circle w3-hover-opacity">
+    <h3><strong>Advanced Linux</strong></h3>
+    <p>Advanced Linux</p>
+  </a>
+</div>
               
 <!-- Second row -->
-              <div class="w3-row"><br>
-          
-                <div class="w3-quarter">
-                  <a href="{% url 'personal_projects' %}">
-                    <img src="{% static 'images/c.svg' %}" alt="Boss3" style="width:45%" class="w3-circle w3-hover-opacity">
-                    <h3><strong>C++</strong></h3>
-                    <p>Come and look at our projects!</p>
-                  </a>
-                </div>
-          
-                <div class="w3-quarter">
-                  <a href="{% url 'part_6' %}">
-                    <img src="{% static 'images/python.webp' %}" alt="Boss3" style="width:45%" class="w3-circle w3-hover-opacity">
-                    <h3><strong>Python</strong></h3>
-                    <p>Looks at our credentials or lackof!</p>
-                  </a>
-                </div>
-          
-                <div class="w3-quarter">
-                  <a href="{% url 'part_7' %}">
-                    <img src="{% static 'images/javascript.png' %}" alt="Boss3" style="width:45%" class="w3-circle w3-hover-opacity">
-                    <h3><strong>Javascript</strong></h3>
-                    <p>Self explanatory!</p>
-                  </a>
-                </div>
-          
-                <div class="w3-quarter">
-                  <a href="{% url 'part_8' %}">
-                    <img src="{% static 'images/image.webp' %}" alt="Boss4" style="width:45%" class="w3-circle w3-hover-opacity">
-                    <h3><strong>Go</strong></h3>
-                    <p>Go programming language</p>
-                  </a>
-                </div>
-          
-              </div>
-          
- <!-- Third row -->
 <div class="w3-row"><br>
           
-                <div class="w3-quarter">
-                  <a href="{% url 'personal_projects' %}">
-                    <img src="{% static 'images/c.svg' %}" alt="Boss3" style="width:45%" class="w3-circle w3-hover-opacity">
-                    <h3><strong>Rust</strong></h3>
-                    <p>Come and look at our projects!</p>
-                  </a>
-                </div>
-          
-                <div class="w3-quarter">
-                  <a href="{% url 'part_6' %}">
-                    <img src="{% static 'images/html.png' %}" alt="Boss3" style="width:45%" class="w3-circle w3-hover-opacity">
-                    <h3><strong>HTML</strong></h3>
-                    <p>Looks at our credentials or lackof!</p>
-                  </a>
-                </div>
-          
-                <div class="w3-quarter">
-                  <a href="{% url 'part_7' %}">
-                    <img src="{% static 'images/skull.png' %}" alt="Boss3" style="width:45%" class="w3-circle w3-hover-opacity">
-                    <h3><strong>Exploits</strong></h3>
-                    <p>Use responsibly</p>
-                  </a>
-                </div>
-          
-                <div class="w3-quarter">
-                  <a href="{% url 'part_8' %}">
-                    <img src="{% static 'images/tool.png' %}" alt="Boss4" style="width:45%" class="w3-circle w3-hover-opacity">
-                    <h3><strong>Tools</strong></h3>
-                    <p>Powerful tools</p>
-                  </a>
-                </div>
-          
-              </div>
-<!-- Fourth row -->
-              <div class="w3-row"><br>
-          
-                <div class="w3-quarter">
-                  <a href="{% url 'personal_projects' %}">
-                    <img src="{% static 'images/ai.webp' %}" alt="Boss3" style="width:45%" class="w3-circle w3-hover-opacity">
-                    <h3><strong>Projects</strong></h3>
-                    <p>Come and look at our projects!</p>
-                  </a>
-                </div>
-          
-                <div class="w3-quarter">
-                  <a href="{% url 'part_6' %}">
-                    <img src="{% static 'images/resume.webp' %}" alt="Boss3" style="width:45%" class="w3-circle w3-hover-opacity">
-                    <h3><strong>Resume</strong></h3>
-                    <p>Looks at our credentials or lackof!</p>
-                  </a>
-                </div>
-          
-                <div class="w3-quarter">
-                  <a href="{% url 'part_7' %}">
-                    <img src="{% static 'images/castle2.webp' %}" alt="Boss3" style="width:45%" class="w3-circle w3-hover-opacity">
-                    <h3><strong>Blog/Tutorials</strong></h3>
-                    <p>Self explanatory!</p>
-                  </a>
-                </div>
-          
-                <div class="w3-quarter">
-                  <a href="{% url 'part_8' %}">
-                    <img src="{% static 'images/weird.webp' %}" alt="Boss4" style="width:45%" class="w3-circle w3-hover-opacity">
-                    <h3><strong>About Us</strong></h3>
-                    <p>More info about us!</p>
-                  </a>
-                </div>
-          
-              </div>
-          
-<!-- Fifth row -->
-<div class="w3-row"><br>
-
-  <div class="w3-half" style="margin-top: 00px;">
-    <img src="{% static 'images/wizard.png' %}" alt="Boss1" style="width:45%" class="w3-circle w3-hover-opacity">
-    <a href="{% url 'part_1' %}">
-      <h3>Jesse Larabie</h3>
-      <p>Web Designer & Cyber security</p>
-      <p>Expert schumer</p>
+  <div class="w3-quarter">
+    <a href="{% url 'personal_projects' %}">
+      <img src={% static "images/c.png" %} alt="Boss2" style="width:45%" class="w3-circle w3-hover-opacity">
+      <h3><strong>C++</strong></h3>
+      <p>Come and look at our projects!</p>
     </a>
   </div>
 
-  <div class="w3-half">
-    <img src="{% static 'images/nukee.webp' %}" alt="Boss1" style="width:45%" class="w3-circle w3-hover-opacity">
-    <a href="{% url 'part_1' %}">
-      <h3>Johnathan Hienrick</h3>
-      <p>Web Designer & Cyber security</p>
-      <p>Expert gooner</p>
+  <div class="w3-quarter">
+    <a href="{% url 'part_6' %}">
+      <img src={% static "images/python.png" %} alt="Boss2" style="width:45%" class="w3-circle w3-hover-opacity">
+      <h3><strong>Python</strong></h3>
+      <p>Looks at our credentials or lackof!</p>
+    </a>
+  </div>
+
+  <div class="w3-quarter">
+    <a href="{% url 'part_7' %}">
+      <img src={% static "images/java.png" %} alt="Boss2" style="width:45%" class="w3-circle w3-hover-opacity">
+      <h3><strong>Javascript</strong></h3>
+      <p>Self explanatory!</p>
+    </a>
+  </div>
+
+  <div class="w3-quarter">
+    <a href="{% url 'part_8' %}">
+      <img src={% static "images/cyberpad.webp" %} alt="Boss2" style="width:45%" class="w3-circle w3-hover-opacity">
+      <h3><strong>Go</strong></h3>
+      <p>Go programming language</p>
     </a>
   </div>
 
 </div>
           
-<footer class="w3-container w3-padding-32 w3-theme-d1 w3-center">
-  <h4>Follow Us</h4>
-  <a class="w3-button w3-large w3-teal" href="https://www.facebook.com/your-facebook-page" title="Facebook"><i class="fa fa-facebook"></i></a> 
-  <a class="w3-button w3-large w3-teal" href="https://twitter.com/your-twitter-page" title="Twitter"><i class="fa fa-twitter"></i></a> 
-  <a class="w3-button w3-large w3-teal" href="https://www.instagram.com/your-instagram-page" title="Instagram"><i class="fa fa-instagram"></i></a> 
-  <a class="w3-button w3-large w3-teal " href="https://www.linkedin.com/in/your-linkedin-page" title="LinkedIn"><i class="fa fa-linkedin"></i></a>
-
-  <div style="position:relative;bottom:100px;z-index:1;" class="w3-tooltip w3-right">
-    <span class="w3-text w3-padding w3-teal w3-hide-small">Go To Top</span>   
-    <a class="w3-button w3-theme" href="#myPage"><span class="w3-xlarge">
-    <i class="fa fa-chevron-circle-up"></i></span></a>
+ <!-- Third row -->
+<div class="w3-row"><br>
+          
+  <div class="w3-quarter">
+    <a href="{% url 'personal_projects' %}">
+      <img src={% static "images/rust.png" %} alt="Boss2" style="width:45%" class="w3-circle w3-hover-opacity">
+      <h3><strong>Rust</strong></h3>
+      <p>Come and look at our projects!</p>
+    </a>
   </div>
+
+  <div class="w3-quarter">
+    <a href="{% url 'part_6' %}">
+      <img src={% static "images/html.png" %} alt="Boss2" style="width:45%" class="w3-circle w3-hover-opacity">
+      <h3><strong>HTML</strong></h3>
+      <p>Looks at our credentials</p>
+    </a>
+  </div>
+
+  <div class="w3-quarter">
+    <a href="{% url 'part_7' %}">
+      <img src={% static "images/cyberpad.webp" %} alt="Boss2" style="width:45%" class="w3-circle w3-hover-opacity">
+      <h3><strong>Exploits</strong></h3>
+      <p>Use responsibly</p>
+    </a>
+  </div>
+
+  <div class="w3-quarter">
+    <a href="{% url 'part_8' %}">
+      <img src={% static "images/cyberpad.webp" %} alt="Boss2" style="width:45%" class="w3-circle w3-hover-opacity">
+      <h3><strong>Tools</strong></h3>
+      <p>Powerful tools</p>
+    </a>
+  </div>
+
+</div>
+
+<!-- Fourth row -->
+<div class="w3-row"><br>
+
+  <div class="w3-quarter">
+    <a href="{% url 'personal_projects' %}">
+      <img src={% static "images/cyberpad.webp" %} alt="Boss2" style="width:45%" class="w3-circle w3-hover-opacity">
+      <h3><strong>Projects</strong></h3>
+      <p>Come and look at our projects!</p>
+    </a>
+  </div>
+
+  <div class="w3-quarter">
+    <a href="{% url 'part_6' %}">
+      <img src={% static "images/cyberpad.webp" %} alt="Boss2" style="width:45%" class="w3-circle w3-hover-opacity">
+      <h3><strong>Resume</strong></h3>
+      <p>Looks at our credentials or lackof!</p>
+    </a>
+  </div>
+
+  <div class="w3-quarter">
+    <a href="{% url 'part_7' %}">
+      <img src={% static "images/cyberpad.webp" %} alt="Boss2" style="width:45%" class="w3-circle w3-hover-opacity">
+      <h3><strong>Blog/Tutorials</strong></h3>
+      <p>Self explanatory!</p>
+    </a>
+  </div>
+
+  <div class="w3-quarter">
+    <a href="{% url 'part_8' %}">
+      <img src={% static "images/cyberpad.webp" %} alt="Boss2" style="width:45%" class="w3-circle w3-hover-opacity">
+      <h3><strong>About Us</strong></h3>
+      <p>More info about us!</p>
+    </a>
+  </div>
+
+</div>
+          
+<script>
+
+  // Script for side navigation
+  function w3_open() {
+    var x = document.getElementById("mySidebar");
+    x.style.width = "300px";
+    x.style.paddingTop = "10%";
+    x.style.display = "block";
+  }
+  
+  // Close side navigation
+  function w3_close() {
+    document.getElementById("mySidebar").style.display = "none";
+  }
+  
+  // Used to toggle the menu on smaller screens when clicking on the menu button
+  function openNav() {
+    var x = document.getElementById("navDemo");
+    if (x.className.indexOf("w3-show") == -1) {
+      x.className += " w3-show";
+    } else { 
+      x.className = x.className.replace(" w3-show", "");
+    }
+  }
+</script>
+
+<footer class="w3-container w3-padding-16" style="width: 100%; position: static; background-color: teal; border: 8px solid black; display: flex; flex-direction: column; align-items: center; height: 800px;">
+  <h4 style="color: white; font-size: 24px;">Follow Us</h4>
+  <div class="w3-row" style="display: flex; justify-content: center; align-items: center; margin-bottom: 20px;">
+    <div class="w3-quarter" style="text-align: center;">
+      <img src="{% static 'images/wizard.png' %}" alt="Boss1" style="width: 40%;" class="w3-circle w3-hover-opacity">
+      <div>
+        <h3 style="color: white; font-size: 30px;">Jesse Larabie</h3>
+        <p style="color: white; font-size: 20px;">Web Designer & Cyber security</p>
+        <p style="color: white; font-size: 20px;">Expert schumer</p>
+      </div>
+    </div>
+    <div class="w3-quarter" style="text-align: center;">
+      <img src="{% static 'images/nukee.png' %}" alt="Boss1" style="width: 40%;" class="w3-circle w3-hover-opacity">
+      <div>
+        <h3 style="color: white; font-size: 30px;">Johnathan Hienrick</h3>
+        <p style="color: white; font-size: 20px;">Web Designer & Cyber security</p>
+        <p style="color: white; font-size: 20px;">Expert gooner</p>
+      </div>
+    </div>
+  </div>
+  <div style="display: flex; justify-content: space-between; width: 100%;">
+    <div>
+      <a class="w3-button w3-xlarge w3-teal" href="" title="Facebook"><i class="fa fa-facebook"></i></a> 
+      <a class="w3-button w3-xlarge w3-teal" href="" title="Twitter"><i class="fa fa-twitter"></i></a> 
+      <a class="w3-button w3-xlarge w3-teal" href="" title="Instagram"><i class="fa fa-instagram"></i></a> 
+      <a class="w3-button w3-xlarge w3-teal" href="" title="LinkedIn"><i class="fa fa-linkedin"></i></a>
+    </div>
+    <div>
+      <div style="position:relative; bottom: 30px; z-index: 1;" class="w3-tooltip w3-right">
+        <span class="w3-text w3-padding w3-teal w3-hide-small">Go To Top</span>   
+        <a class="w3-button w3-theme w3-xlarge" href="#myPage"><span class="w3-xlarge"><i class="fa fa-chevron-circle-up"></i></span></a>
+      </div>
+    </div>
+  </div>
+  <p style="color: white; font-size: 20px;">&copy; 2024 The Outpost. All rights reserved.</p>
+  <p style="color: white; font-size: 20px;">Contact: Jesselarabie1@gmail.com</p>
 </footer>
 
-<script>
-// Script for side navigation
-function w3_open() {
-  var x = document.getElementById("mySidebar");
-  x.style.width = "300px";
-  x.style.paddingTop = "10%";
-  x.style.display = "block";
-}
-
-// Close side navigation
-function w3_close() {
-  document.getElementById("mySidebar").style.display = "none";
-}
-
-// Used to toggle the menu on smaller screens when clicking on the menu button
-function openNav() {
-  var x = document.getElementById("navDemo");
-  if (x.className.indexOf("w3-show") == -1) {
-    x.className += " w3-show";
-  } else { 
-    x.className = x.className.replace(" w3-show", "");
-  }
-}
-</script>
 
 </body>
 </html>

@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>W3.CSS Template</title>
+<title>The Outpost</title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
@@ -11,6 +11,15 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body id="myPage">
+
+  <style>
+    /* Add black outline to images */
+    img {
+      outline: 5px solid black; /* Adjust the width as needed */
+    }
+  </style>
+  
+  
 
 <!-- Sidebar on click -->
 <nav class="w3-sidebar w3-bar-block w3-white w3-card w3-animate-left w3-xxlarge" style="display:none;z-index:2" id="mySidebar">
@@ -42,7 +51,7 @@
 
 <!-- Image Header -->
 <div class="w3-display-container w3-animate-opacity">
-  <img src={% static 'images/Header.webp' %} alt="boat" style="width:100%;min-height:400px;max-height:400px;">
+  <img src={% static 'images/Header.webp' %} alt="boat" style="width:100%;min-height:200px;max-height:200px;">
   <div class="w3-container w3-display-bottomleft w3-margin-bottom">  
 
   </div>
@@ -139,29 +148,6 @@
   };
 </script>
 
-
-
-<!-- Modal -->
-<div id="id01" class="w3-modal">
-  <div class="w3-modal-content w3-card-4 w3-animate-top">
-    <header class="w3-container w3-teal w3-display-container"> 
-      <span onclick="document.getElementById('id01').style.display='none'" class="w3-button w3-teal w3-display-topright"><i class="fa fa-remove"></i></span>
-      <h4> If you notice any bugs </h4>
-      <h5> Or if you would like to tell me something <i class="fa fa-smile-o"></i></h5>
-    </header>
-    <div class="w3-container">
-      <p>You can reach me at:</p>
-      <p>Jesselarabie1@gmail.com<a class="w3-text-teal" href="/w3css/default.asp"></p>
-    </div>
-    <footer class="w3-container w3-teal">
-      <p>The Outpost</p>
-    </footer>
-  </div>
-</div>
-
-
-
-
 <!-- Container -->
 
 <div class="w3-container" style="position:relative">
@@ -199,83 +185,87 @@
             <img src={% static "images/shield.webp" %} alt="Boss4" style="width:45%" class="w3-circle w3-hover-opacity">
             <h3>Part 4</h3>
             <p>Network Security: </p>
-        </div>
-        
-        
-        <!--second row-->
-        
-        <div class="w3-row"><br>
+          </div>
+          
+          
+          <!--second row-->
+          
+          <div class="w3-row"><br>
             <div class="w3-quarter">
               <a href="{% url 'part_5' %}">
                 <img src={% static "images/cmdline.webp" %} alt="Boss2" style="width:45%" class="w3-circle w3-hover-opacity">
                 <h3>Part 5</h3>
                 <p>Cyber Threats and Attack Strategies:</p>
-            </div>
-            
-            <div class="w3-quarter">
-              <a href="{% url 'part_6' %}">
-                <img src={% static "images/cmdline2.webp" %} alt="Boss3" style="width:45%" class="w3-circle w3-hover-opacity">
-                <h3>Part 6</h3>
-                <p>Security Policies and Legal Frameworks:</p>
-            </div>
-            
-            <div class="w3-quarter">
-              <a href="{% url 'part_7' %}">
-                <img src={% static "images/castle2.webp" %} alt="Boss3" style="width:45%" class="w3-circle w3-hover-opacity">
-                <h3>Part 7</h3>
-                <p>Cryptography and Access Control:</p>
-            </div>
-            <div class="w3-quarter" style="margin-bottom: 110px;">
-              <a href="{% url 'part_8' %}">
-                  <img src="{% static "images/weird.webp" %}" alt="Boss4" style="width:45%" class="w3-circle w3-hover-opacity">
-                  <h3>Part 8</h3>
-                  <p>Incident Response and Disaster Recovery:</p>
-              </a>
-          </div>
-          
-        
-        </div>
+              </div>
+              
+              <div class="w3-quarter">
+                <a href="{% url 'part_6' %}">
+                  <img src={% static "images/cmdline2.webp" %} alt="Boss3" style="width:45%" class="w3-circle w3-hover-opacity">
+                  <h3>Part 6</h3>
+                  <p>Security Policies and Legal Frameworks:</p>
+                </div>
+                
+                <div class="w3-quarter">
+                  <a href="{% url 'part_7' %}">
+                    <img src={% static "images/castle2.webp" %} alt="Boss3" style="width:45%" class="w3-circle w3-hover-opacity">
+                    <h3>Part 7</h3>
+                    <p>Cryptography and Access Control:</p>
+                  </div>
+                  <div class="w3-quarter" style="margin-bottom: 110px;">
+                    <a href="{% url 'part_8' %}">
+                      <img src="{% static "images/weird.webp" %}" alt="Boss4" style="width:45%" class="w3-circle w3-hover-opacity">
+                      <h3>Part 8</h3>
+                      <p>Incident Response and Disaster Recovery:</p>
+                    </a>
+                  </div>
+                  
+                  
+                </div>
     </div>
     
-<footer class="w3-container w3-padding-32 w3-theme-d1 w3-center">
-  <h4>Follow Us</h4>
-  <!--<a class="w3-button w3-large w3-teal" href="javascript:void(0)" title="Facebook"><i class="fa fa-facebook"></i></a> 
-  <a class="w3-button w3-large w3-teal" href="javascript:void(0)" title="Twitter"><i class="fa fa-twitter"></i></a> 
-   <a class="w3-button w3-large w3-teal" href="" title="Google +"><i class="fa fa-google-plus"></i></a> -->
-   <a class="w3-button w3-large w3-teal" href="https://www.instagram.com/reel/C2-fY2NOjVC/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==" title="Google +"><i class="fa fa-instagram"></i></a> 
-  <a class="w3-button w3-large w3-teal " href="https://www.linkedin.com/in/jesse-larabie/" title="Linkedin"><i class="fa fa-linkedin"></i></a>
-
-  <div style="position:relative;bottom:100px;z-index:1;" class="w3-tooltip w3-right">
-    <span class="w3-text w3-padding w3-teal w3-hide-small">Go To Top</span>   
-    <a class="w3-button w3-theme" href="#myPage"><span class="w3-xlarge">
-    <i class="fa fa-chevron-circle-up"></i></span></a>
-  </div>
-</footer>
-
-<script>
-// Script for side navigation
-function w3_open() {
-  var x = document.getElementById("mySidebar");
-  x.style.width = "300px";
-  x.style.paddingTop = "10%";
-  x.style.display = "block";
-}
-
-// Close side navigation
-function w3_close() {
-  document.getElementById("mySidebar").style.display = "none";
-}
-
-// Used to toggle the menu on smaller screens when clicking on the menu button
-function openNav() {
-  var x = document.getElementById("navDemo");
-  if (x.className.indexOf("w3-show") == -1) {
-    x.className += " w3-show";
-  } else { 
-    x.className = x.className.replace(" w3-show", "");
-  }
-}
-</script>
-
-</body>
+    
+    <script>
+      // Script for side navigation
+      function w3_open() {
+        var x = document.getElementById("mySidebar");
+        x.style.width = "300px";
+        x.style.paddingTop = "10%";
+        x.style.display = "block";
+      }
+      
+      // Close side navigation
+      function w3_close() {
+        document.getElementById("mySidebar").style.display = "none";
+      }
+      
+      // Used to toggle the menu on smaller screens when clicking on the menu button
+      function openNav() {
+        var x = document.getElementById("navDemo");
+        if (x.className.indexOf("w3-show") == -1) {
+          x.className += " w3-show";
+        } else { 
+          x.className = x.className.replace(" w3-show", "");
+        }
+      }
+    </script>
+    
+    <footer class="w3-container w3-padding-32 w3-theme-d1 w3-center">
+      <h4>Follow Us</h4>
+      <a class="w3-button w3-large w3-teal" href="https://www.facebook.com/your-facebook-page" title="Facebook"><i class="fa fa-facebook"></i></a> 
+      <a class="w3-button w3-large w3-teal" href="https://twitter.com/your-twitter-page" title="Twitter"><i class="fa fa-twitter"></i></a> 
+      <a class="w3-button w3-large w3-teal" href="https://www.instagram.com/your-instagram-page" title="Instagram"><i class="fa fa-instagram"></i></a> 
+      <a class="w3-button w3-large w3-teal" href="https://www.linkedin.com/in/your-linkedin-page" title="LinkedIn"><i class="fa fa-linkedin"></i></a>
+    
+      <div style="position:relative;bottom:100px;z-index:1;" class="w3-tooltip w3-right">
+        <span class="w3-text w3-padding w3-teal w3-hide-small">Go To Top</span>   
+        <a class="w3-button w3-theme" href="#myPage"><span class="w3-xlarge"><i class="fa fa-chevron-circle-up"></i></span></a>
+      </div>
+    
+      <div class="w3-clear"></div>
+      <p>&copy; 2024 The Outpost. All rights reserved.</p>
+      <p>Contact: Jesselarabie1@gmail.com</p>
+    </footer>
+    
+    
+  </body>
 </html>
