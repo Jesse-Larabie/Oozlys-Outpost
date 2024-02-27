@@ -53,6 +53,31 @@ Go back to your repository on the GitHub website, and you should see your HTML f
 
 
 
+<!-- Fifth row -->
+
+<div class="w3-row" style="display: flex; justify-content: center; align-items: center;"><br>
+
+  <div class="w3-quarter" style="display: flex; flex-direction: column; align-items: center;">
+    <img src="{% static 'images/wizard.png' %}" alt="Boss1" style="width: 45%;" class="w3-circle w3-hover-opacity">
+    <div style="text-align: center;">
+      <h3>Jesse Larabie</h3>
+      <p>Web Designer & Cyber security</p>
+      <p>Expert schumer</p>
+    </div>
+  </div>
+
+  <div class="w3-quarter" style="display: flex; flex-direction: column; align-items: center;">
+    <img src="{% static 'images/nukee.webp' %}" alt="Boss1" style="width: 45%;" class="w3-circle w3-hover-opacity">
+    <div style="text-align: center;">
+      <h3>Johnathan Hienrick</h3>
+      <p>Web Designer & Cyber security</p>
+      <p>Expert gooner</p>
+    </div>
+  </div>
+
+</div>
+
+
 
 
 
