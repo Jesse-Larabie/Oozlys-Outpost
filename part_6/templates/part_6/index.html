@@ -5,32 +5,30 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-</head>
-<body>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
+</head>
+
+<body>
+    {% load static %}
 <!-- Navbar (sit on top) -->
 <div class="w3-top">
-    <div class="w3-bar w3-white w3-wide w3-padding w3-card">
-        <a href="/" class="w3-bar-item w3-button"><b>Part-6</b> Security Policies and Legal Frameworks</a>
+    <div class="w3-bar w3-teal w3-wide w3-padding w3-card">
+        <a href="/cybersecurity" class="w3-bar-item w3-button"><i class="fa fa-home w3-teal"></i> <b>Part-6 </b>Security Policies and Legal Frameworks</a>
+   
         <!-- Float links to the right. Hide them on small screens -->
         <div class="w3-right w3-hide-small">
+        
             <!-- <a href="#contact" class="w3-bar-item w3-button">Contact</a> -->
         </div>
     </div>
 </div>
 
-<!-- Header -->
-<header class="w3-display-container w3-content w3-wide" style="max-width:1500px;" id="home">
-    <img class="w3-image" src="/w3images/architect.jpg" alt="Architecture" width="1500" height="800">
-    <div class="w3-display-middle w3-margin-top w3-center">
-        <h1 class="w3-xxlarge w3-text-white"><span class="w3-padding w3-black w3-opacity-min"><b>The Outpost</b></span> <span class="w3-hide-small w3-text-light-grey">Security Policies and Legal Frameworks</span></h1>
-    </div>
-</header>
-
 <!-- Page content -->
 <div class="w3-content w3-padding" style="max-width:1564px">
 
-    <!-- About Section -->
+
+ <!-- About Section -->
     <div class="w3-container w3-padding-32" id="about">
         <h3 class="w3-border-bottom w3-border-light-grey w3-padding-16"><b>About</b></h3>
         <p>
@@ -72,11 +70,134 @@
         </ol>
     </div>
 
+    <!-- Sound -->
+<audio id="myAudio" loop muted>
+    <!-- Default song -->
+    <source id="audioSource" src="{% static 'images/wethands.mp3' %}" type="audio/mpeg">
+    Your browser does not support the audio element.
+  </audio>
+  
+  <!-- Buttons to toggle and choose songs -->
+  <!-- Buttons to toggle and choose songs -->
+  <button onclick="toggleAudio()" class="w3-button w3-large w3-teal" title="Toggle Audio">Toggle Audio</button>
+  <button onclick="openSongPopup()" class="w3-button w3-large w3-teal" title="Choose Song">Choose Song</button>
+
+  
+  <!-- Modal popup for song selection -->
+<div id="songModal" class="w3-modal">
+  <div class="w3-modal-content w3-card-4">
+    <header class="w3-container w3-teal">
+      <span onclick="closeSongPopup()" class="w3-button w3-teal w3-display-topright">&times;</span>
+      <h2>Choose a Song</h2>
+    </header>
+    <div class="w3-container">
+      <div>
+        <p>Minecraft</p>
+        <ul>
+          <li><a href="#" onclick="changeSong('{% static 'images/aria_math.mp3' %}'); return false;">Aria Math</a></li>
+          <li><a href="#" onclick="changeSong('{% static 'images/wethands.mp3' %}'); return false;">Wet Hands</a></li>
+          <li><a href="#" onclick="changeSong('{% static 'images/haggstrom.mp3' %}'); return false;">Haggstrom</a></li>
+          <li><a href="#" onclick="changeSong('{% static 'images/haunt_muskie.mp3' %}'); return false;">Haunt Muskie</a></li>
+          <li><a href="#" onclick="changeSong('{% static 'images/subwoofer.mp3' %}'); return false;">Subwoofer Lullaby</a></li>
+        </ul>
+      </div>
+      <div>
+        <p>Mario</p>
+        <ul>
+          <li><a href="#" onclick="changeSong('{% static 'images/Bowser_Peaches.mp3' %}'); return false;">Peaches (Mario Movie)</a></li>
+          <li><a href="#" onclick="changeSong('{% static 'images/Super_mario_bros_theme_song.mp3' %}'); return false;">Super Mario Bros Theme Song (Super Mario World)</a></li>
+          <li><a href="#" onclick="changeSong('{% static 'images/Piranha_Plants_Lullaby.mp3' %}'); return false;">Piranha Plant Lullaby (super mario 64)</a></li>
+          <li><a href="#" onclick="changeSong('{% static 'images/Gelato_Beach.mp3' %}'); return false;">Gelato Beach (Super Mario Sunshine)</a></li>
+          <li><a href="#" onclick="changeSong('{% static 'images/Gusty_Garden_Galaxy.mp3' %}'); return false;">Gusty Garden Galaxy (Super Mario Galaxy)</a></li>
+          <li><a href="#" onclick="changeSong('{% static 'images/Night_Of_Doom_Bowsers_Sky_Palace_Theme.mp3' %}'); return false;">Night of doom boswer's theme (Super Mario 74)</a></li>
+        </ul>
+      </div>
+      <div>
+        <p>The Legend Of Zelda</p>
+        <ul>
+          <li><a href="#" onclick="changeSong('{% static 'images/lost_woods.mp3' %}'); return false;">Lost Woods (The Legend of Zelda: Ocarina Of Time)</a></li>
+          <li><a href="#" onclick="changeSong('{% static 'images/Great_fairy.mp3' %}'); return false;">Great Fairy Fountain (The Legend of Zelda: Ocarina Of Time)</a></li>
+          <li><a href="#" onclick="changeSong('{% static 'images/gerudo_valley.mp3' %}'); return false;">Gerudo Valley (The Legend of Zelda: Ocarina Of Time)</a></li>
+          <li><a href="#" onclick="changeSong('{% static 'images/title_theme.mp3' %}'); return false;">Title Theme (The Legend of Zelda: Twilight Princess)</a></li>
+          <li><a href="#" onclick="changeSong('{% static 'images/Midnas_Lament.mp3' %}'); return false;">Midna's Tament (The Legend of Zelda: Twilight Princess)</a></li>
+          <li><a href="#" onclick="changeSong('{% static 'images/midnas_theme.mp3' %}'); return false;">Midna's Theme (The Legend of Zelda: Twilight Princess)</a></li>
+          <li><a href="#" onclick="changeSong('{% static 'images/dragon.mp3' %}'); return false;">Dragon Roost Island (The Legend of Zelda: Windwaker)</a></li>
+        </ul>
+      </div>
+      <p>Megaman</p>
+        <ul>
+          <li><a href="#" onclick="changeSong('{% static 'images/opening.mp3' %}'); return false;">Opening Theme (Megaman 8)</a></li>
+          <li><a href="#" onclick="changeSong('{% static 'images/Title_Theme _megaman.mp3' %}'); return false;">Title Theme (Megaman 8)</a></li>
+          <li><a href="#" onclick="changeSong('{% static 'images/Stage_Select1.mp3' %}'); return false;">Stage Select (Megaman 8)</a></li>
+          <li><a href="#" onclick="changeSong('{% static 'images/Stage_Select_Sega_Genesis_remix.mp3' %}'); return false;">Stage Select Remix (Megaman 8)</a></li>
+          <li><a href="#" onclick="changeSong('{% static 'images/Frost_Man.mp3' %}'); return false;">Frost Man Stage Theme (Megaman 8)</a></li>
+          <li><a href="#" onclick="changeSong('{% static 'images/astro_man.mp3' %}'); return false;">Astro Man Stage Theme (Megaman 8)</a></li>
+          <li><a href="#" onclick="changeSong('{% static 'images/Wily_Stage1.mp3' %}'); return false;">Wily Stage 1 (Megaman 8)</a></li>
+        </ul>
+      </div>
+      <div>
+    </div>
+  </div>
+</div>
+
+  
+  <script>
+    // Function to retrieve the selected song from browser storage
+    function getSelectedSong() {
+      return localStorage.getItem('selectedSong');
+    }
+  
+    // Function to set the selected song to browser storage
+    function setSelectedSong(songUrl) {
+      localStorage.setItem('selectedSong', songUrl);
+    }
+  
+    // Function to toggle the audio playback
+    function toggleAudio() {
+      var audio = document.getElementById("myAudio");
+      if (audio.paused) {
+        audio.play();
+        audio.muted = false; // Unmute the audio when it starts playing
+      } else {
+        audio.pause();
+      }
+    }
+  
+    // Function to open the song selection modal
+    function openSongPopup() {
+      document.getElementById("songModal").style.display = "block";
+    }
+  
+    // Function to close the song selection modal
+    function closeSongPopup() {
+      document.getElementById("songModal").style.display = "none";
+    }
+  
+    // Function to change the selected song
+    function changeSong(songUrl) {
+      var audio = document.getElementById("myAudio");
+      audio.src = songUrl;
+      audio.play();
+      audio.muted = false; // Unmute the audio when it starts playing
+      setSelectedSong(songUrl); // Save the selected song to browser storage
+      closeSongPopup(); // Close the song selection modal
+    }
+  
+    // When the page loads, check if there's a selected song and play it
+    window.onload = function() {
+      var selectedSong = getSelectedSong();
+      if (selectedSong) {
+        var audio = document.getElementById("myAudio");
+        audio.src = selectedSong;
+        audio.play();
+        audio.muted = false; // Unmute the audio when it starts playing
+      }
+    };
+  </script>
+  
 <!-- End page content -->
 </div>
 
-<!-- Footer -->
-<footer class="w3-center w3-black w3-padding-16"></footer>
 
 </body>
 </html>
