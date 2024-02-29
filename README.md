@@ -23,6 +23,7 @@ The vision of the website:
 
 I am trying to create a website that will teach visitors various programming concepts, there is various sections based one everything from Cyber security basics, operating systems, programming languages and more. The site was built with CSS.W3 which is a begginer freindly CSS library.
 
+I are using style="background-color:#0cc6df;">
 
 
 
