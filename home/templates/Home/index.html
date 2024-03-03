@@ -1,21 +1,29 @@
 {% load static %} 
 
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<title>The Outpost</title>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-<link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-black.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<head>
-  <title>The Outpost</title>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.3">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <title>The Outpost</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
+<!-- Font Awesome -->
+<link
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+  rel="stylesheet"
+/>
+<!-- Google Fonts -->
+<link
+  href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
+  rel="stylesheet"
+/>
+<!-- MDB -->
+<link
+  href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/7.1.0/mdb.min.css"
+  rel="stylesheet"
+/>
 <style>
   /* Add black outline to images */
   img {
@@ -27,66 +35,212 @@
 </head>
 <body id="myPage">
 
-  
-  <!-- Sidebar on click -->
-  <nav class="w3-sidebar w3-bar-block w3-white w3-card w3-animate-left w3-xxlarge" style="display:none;z-index:2" id="mySidebar">
-    <a href="javascript:void(0)" onclick="w3_close()" class="w3-bar-item w3-button w3-display-topright w3-text-teal">Close
-      <i class="fa fa-remove"></i>
-    </a>
-  </nav>
-  
-   <!-- Navbar on small screens -->
-   <div id="navDemo" class="w3-bar-block w3-theme-d2 w3-hide w3-hide-large w3-hide-medium">
-    <a href="'linux'" class="w3-bar-item w3-button">Linux</a>
-    <a href="'videos'" class="w3-bar-item w3-button">Videos</a>
-    <a href="'pricing'" class="w3-bar-item w3-button">Links</a>
-    <a href="'networks' %}" class="w3-bar-item w3-button">Networks</a> 
-    <a href="personal_projects/" class="w3-bar-item w3-button">Personal Projects</a>
-    <a href="#" class="w3-bar-item w3-button">Search</a>
-  </div>
-</div>
+<!--Main Navigation-->
+<header>
+  <style>
+    #intro {
+      background-image: url("{% static 'images/banner35.png' %}");
+      height: 25vh;
+    }
+
+    /* Height for devices larger than 576px */
+    @media (min-width: 992px) {
+      #intro {
+        margin-top: -58.59px;
+      }
+    }
+
+    .navbar .nav-link {
+      color: #fff !important;
+    }
+  </style>
 
   <!-- Navbar -->
-  <div class="w3-top">
-    <div class="w3-bar w3-theme-d2 w3-left-align">
-      <a class="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-right w3-hover-white w3-theme-d2" href="javascript:void(0);" onclick="openNav()"><i class="fa fa-bars"></i></a>
-        <div class="w3-dropdown-hover w3-hide-small"> 
+  <nav class="navbar navbar-expand-lg navbar-light d-none d-lg-block" style="z-index: 2000;">
+    <div class="container-fluid">
+      <!-- Navbar brand -->
+      <a class="navbar-brand nav-link" target="_blank" href="/home">
+        <strong>The Outpost</strong>
+      </a>
+      <button class="navbar-toggler" type="button" data-mdb-collapse-init data-mdb-target="#navbarExample01"
+              aria-controls="navbarExample01" aria-expanded="false" aria-label="Toggle navigation">
+        <i class="fas fa-bars"></i>
+      </button>
+          </li>
+        </ul>
+
+        <ul class="navbar-nav d-flex flex-row">
+          <!-- Icons -->
+          <li class="nav-item me-3 me-lg-0">
+            <a class="nav-link" href="https://www.youtube.com/channel/UC26Wez2rUhMf4d2FeIOseWw" rel="nofollow"
+               target="_blank">
+              <i class="fab fa-youtube"></i>
+            </a>
+          </li>
+          <li class="nav-item me-3 me-lg-0">
+            <a class="nav-link" href=" rel="nofollow" target="_blank">
+              <i class="fab fa-facebook-f"></i>
+            </a>
+          </li>
+          <li class="nav-item me-3 me-lg-0">
+            <a class="nav-link" href="" rel="nofollow" target="_blank">
+              <i class="fab fa-twitter"></i>
+            </a>
+          </li>
+          <li class="nav-item me-3 me-lg-0">
+            <a class="nav-link" href="https://github.com/Jesse-Larabie/The-Outpost" rel="nofollow" target="_blank">
+              <i class="fab fa-github"></i>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <!-- Navbar -->
+
+  <!-- Background image -->
+  <div id="intro" class="bg-image shadow-2-strong">
+    <div class="mask" style="background-color: rgba(0, 0, 0, 0.8);">
+      <div class="container d-flex align-items-center justify-content-center text-center h-100">
+        <div class="text-white" data-mdb-theme="dark">
+          <h1 class="mb-3">Welcome To The Outpost</h1>
+          <h5 class="mb-4">Your best hub for Cyber-Resources</h5>
+          <!--<a class="btn btn-outline-light btn-lg m-2" data-mdb-ripple-init href="https://www.youtube.com/watch?v=c9B4TPnak1A" role="button"
+             rel="nofollow" target="_blank">Start tutorial</a>
+          <a class="btn btn-outline-light btn-lg m-2" data-mdb-ripple-init href="https://mdbootstrap.com/docs/standard/" target="_blank"
+             role="button">Download MDB UI KIT</a>-->
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Background image -->
+</header>
+<!--Main Navigation-->
+
+<!--Main layout-->
+<main class="mt-5">
+  <div class="container">
+    <!--Section: Content-->
+    <section>
+      <div class="row">
+        <div class="col-md-6 gx-5 mb-4">
+          <div class="bg-image hover-overlay shadow-2-strong" data-mdb-ripple-init data-mdb-ripple-color="light">
+            <img src="https://mdbootstrap.com/img/new/slides/031.jpg" class="img-fluid" />
+            <a href="#!">
+              <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
+            </a>
+          </div>
+        </div>
+
+        <div class="col-md-6 gx-5 mb-4">
+          <h4><strong>Facilis consequatur eligendi</strong></h4>
+          <p class="text-muted">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis consequatur
+            eligendi quisquam doloremque vero ex debitis veritatis placeat unde animi laborum
+            sapiente illo possimus, commodi dignissimos obcaecati illum maiores corporis.
+          </p>
+          <p><strong>Doloremque vero ex debitis veritatis?</strong></p>
+          <p class="text-muted">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod itaque voluptate
+            nesciunt laborum incidunt. Officia, quam consectetur. Earum eligendi aliquam illum
+            alias, unde optio accusantium soluta, iusto molestiae adipisci et?
+          </p>
+        </div>
+      </div>
+    </section>
+    <!--Section: Content-->
+
+    <hr class="my-5" />
+
+    <!--Section: Content-->
+    <section class="text-center">
+      <h4 class="mb-5"><strong>Facilis consequatur eligendi</strong></h4>
+
+      <div class="row">
+        <div class="col-lg-4 col-md-12 mb-4">
+          <div class="card">
+            <div class="bg-image hover-overlay" data-mdb-ripple-init data-mdb-ripple-color="light">
+              <img src="https://mdbootstrap.com/img/new/standard/nature/184.jpg" class="img-fluid" />
+              <a href="#!">
+                <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
+              </a>
+            </div>
+            <div class="card-body">
+              <h5 class="card-title">Card title</h5>
+              <p class="card-text">
+                Some quick example text to build on the card title and make up the bulk of the
+                card's content.
+              </p>
+              <a href="#!" class="btn btn-primary" data-mdb-ripple-init>Button</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-4 col-md-6 mb-4">
+          <div class="card">
+            <div class="bg-image hover-overlay" data-mdb-ripple-init data-mdb-ripple-color="light">
+              <img src="https://mdbootstrap.com/img/new/standard/nature/023.jpg" class="img-fluid" />
+              <a href="#!">
+                <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
+              </a>
+            </div>
+            <div class="card-body">
+              <h5 class="card-title">Card title</h5>
+              <p class="card-text">
+                Some quick example text to build on the card title and make up the bulk of the
+                card's content.
+              </p>
+              <a href="#!" class="btn btn-primary" data-mdb-ripple-init>Button</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-4 col-md-6 mb-4">
+          <div class="card">
+            <div class="bg-image hover-overlay" data-mdb-ripple-init data-mdb-ripple-color="light">
+              <img src="https://mdbootstrap.com/img/new/standard/nature/111.jpg" class="img-fluid" />
+              <a href="#!">
+                <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
+              </a>
+            </div>
+            <div class="card-body">
+              <h5 class="card-title">Card title</h5>
+              <p class="card-text">
+                Some quick example text to build on the card title and make up the bulk of the
+                card's content.
+              </p>
+              <a href="#!" class="btn btn-primary" data-mdb-ripple-init>Button</a>
+            </div>
           </div>
         </div>
       </div>
-      
-      
-    </div>
-    
-    <!-- Image Header -->
-    <div class="w3-display-container w3-animate-opacity">
-      <img src={% static 'images/minecraft.jpg' %} alt="boat" style="width:100%;min-height:300px;max-height:300px;">
-      <div class="w3-container w3-display-bottomleft w3-margin-bottom">  
-        <button onclick="document.getElementById('id01').style.display='block'" class="w3-button w3-xlarge w3-theme w3-hover-teal" title="Test3">FAQ</button>
-      </div>
-    </div>
+    </section>
 
-    <!-- Sound -->
+<!-- Sound -->
 <audio id="myAudio" loop muted>
 
-  <!-- Default song -->
+<!-- Default song -->
   <source id="audioSource" src="{% static 'images/wethands.mp3' %}" type="audio/mpeg">
   Your browser does not support the audio element.
 </audio>
 
-<!-- Buttons to toggle and choose songs -->
-<button onclick="toggleAudio()" class="w3-button w3-large w3-teal" title="Toggle Audio">Toggle Audio</button>
-<button onclick="openSongPopup()" class="w3-button w3-large w3-teal" title="Choose Song">Choose Song</button>
 
-<!-- Modal popup for song selection -->
-<div id="songModal" class="w3-modal">
-  <div class="w3-modal-content w3-card-4">
-    <header class="w3-container w3-teal">
-      <span onclick="closeSongPopup()" class="w3-button w3-teal w3-display-topright">&times;</span>
-      <h2>Choose a Song</h2>
-    </header>
-    <div class="w3-container">
-      <div>
+<!-- Button trigger modal -->
+<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+  Choose Song
+</button>
+<!-- Volume slider -->
+<input type="range" min="0" max="100" value="100" id="volumeSlider" oninput="changeVolume(this.value)" style="width: 200px;">
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Choose a Song</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <!-- Songs -->
         <p>Minecraft</p>
         <ul>
           <li><a href="#" onclick="changeSong('{% static 'images/aria_math.mp3' %}'); return false;">Aria Math</a></li>
@@ -95,8 +249,7 @@
           <li><a href="#" onclick="changeSong('{% static 'images/haunt_muskie.mp3' %}'); return false;">Haunt Muskie</a></li>
           <li><a href="#" onclick="changeSong('{% static 'images/subwoofer.mp3' %}'); return false;">Subwoofer Lullaby</a></li>
         </ul>
-      </div>
-      <div>
+        
         <p>Mario</p>
         <ul>
           <li><a href="#" onclick="changeSong('{% static 'images/Bowser_Peaches.mp3' %}'); return false;">Peaches (Mario Movie)</a></li>
@@ -106,8 +259,7 @@
           <li><a href="#" onclick="changeSong('{% static 'images/Gusty_Garden_Galaxy.mp3' %}'); return false;">Gusty Garden Galaxy (Super Mario Galaxy)</a></li>
           <li><a href="#" onclick="changeSong('{% static 'images/Night_Of_Doom_Bowsers_Sky_Palace_Theme.mp3' %}'); return false;">Night of doom boswer's theme (Super Mario 74)</a></li>
         </ul>
-      </div>
-      <div>
+        
         <p>The Legend Of Zelda</p>
         <ul>
           <li><a href="#" onclick="changeSong('{% static 'images/lost_woods.mp3' %}'); return false;">Lost Woods (The Legend of Zelda: Ocarina Of Time)</a></li>
@@ -118,8 +270,8 @@
           <li><a href="#" onclick="changeSong('{% static 'images/midnas_theme.mp3' %}'); return false;">Midna's Theme (The Legend of Zelda: Twilight Princess)</a></li>
           <li><a href="#" onclick="changeSong('{% static 'images/dragon.mp3' %}'); return false;">Dragon Roost Island (The Legend of Zelda: Windwaker)</a></li>
         </ul>
-      </div>
-      <p>Megaman</p>
+        
+        <p>Megaman</p>
         <ul>
           <li><a href="#" onclick="changeSong('{% static 'images/opening.mp3' %}'); return false;">Opening Theme (Megaman 8)</a></li>
           <li><a href="#" onclick="changeSong('{% static 'images/Title_Theme _megaman.mp3' %}'); return false;">Title Theme (Megaman 8)</a></li>
@@ -129,13 +281,22 @@
           <li><a href="#" onclick="changeSong('{% static 'images/astro_man.mp3' %}'); return false;">Astro Man Stage Theme (Megaman 8)</a></li>
           <li><a href="#" onclick="changeSong('{% static 'images/Wily_Stage1.mp3' %}'); return false;">Wily Stage 1 (Megaman 8)</a></li>
         </ul>
-      </div>
-      <div>
-    </div>
-  </div>
-</div>
+      </div> <!-- Close modal-body div -->
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+      </div> <!-- Close modal-footer div -->
+    </div> <!-- Close modal-content div -->
+  </div> <!-- Close modal-dialog div -->
+</div> <!-- Close exampleModal div -->
 
 <script>
+
+  // Function to change the volume
+  function changeVolume(volume) {
+    var audio = document.getElementById("myAudio");
+    audio.volume = volume / 100;
+  }
+
   // Function to retrieve the selected song from browser storage
   function getSelectedSong() {
     return localStorage.getItem('selectedSong');
@@ -189,272 +350,24 @@
   };
 </script>
 
-<!-- Modal -->
-    <div id="id01" class="w3-modal">
-      <div class="w3-modal-content w3-card-4 w3-animate-top">
-        <header class="w3-container w3-teal w3-display-container"> 
-          <span onclick="document.getElementById('id01').style.display='none'" class="w3-button w3-teal w3-display-topright"><i class="fa fa-remove"></i></span>
-          <h4> If you notice any bugs or if you would like to tell me something </h4>
-          <h5> <i class="fa fa-smile-o"></i></h5>
-        </header>
-        <div class="w3-container">
-          <p>You can reach me at: Jesselarabie1@gmail.com</p>
-          <p><a class="w3-text-teal" href="/w3css/default.asp"></p>
-          </div>
-          <footer class="w3-container w3-teal">
-            <p>The Outpost</p>
-          </footer>
-        </div>
-      </div>
-           
-<!-- Container -->
-      
 
-    
-<!-- Team Container -->
-      <style>
-        .w3-row {
-          display: flex;
-          flex-wrap: wrap;
-        }
-        
-        .w3-quarter {
-          flex: 1;
-          padding: 10px;
-          box-sizing: border-box;
-        }
-        
-        .w3-quarter a {
-          display: block;
-          text-decoration: none;
-          color: inherit;
-        }
-        
-        .w3-quarter img {
-          display: block;
-          margin: 0 auto;
-        }
-        
-        .w3-quarter h3,
-        .w3-quarter p {
-          text-align: center;
-        }
-      </style>
-      
-      <div class="w3-container w3-padding-64 w3-center" id="team">
-        <h2>Table Of Contents</h2>
-        <p>Welcome to the Cyber security section of the Outpost!</p>
-        <div class="w3-row">
-          <br>      
-              
-<!-- First row -->
-<div class="w3-quarter">
-  <a href="{% url 'cybersecurity' %}">
-    <img src={% static "images/cyber.png" %} alt="Boss2" style="width:45%" class="w3-circle w3-hover-opacity">
-    <h3><strong>Cyber security basics</strong></h3>
-    <p>Look at our 8 part course for cyber security!</p>
-  </a>
-</div>
-
-<div class="w3-quarter">
-  <a href="{% url 'windows_basics' %}">
-    <img src={% static "images/windows.png" %} alt="Boss2" style="width:45%" class="w3-circle w3-hover-opacity">
-    <h3><strong>Windows basics</strong></h3>
-    <p>Windows Fundamentals!</p>
-  </a>
-</div>
-
-<div class="w3-quarter">
-  <a href="{% url 'part_4' %}">
-    <img src={% static "images/linux.png" %} alt="Boss2" style="width:45%" class="w3-circle w3-hover-opacity">
-    <h3><strong>Linux Basics</strong></h3>
-    <p>Fundamentals of linux</p>
-  </a>
-</div>
-
-<div class="w3-quarter">
-  <a href="{% url 'personal_projects' %}">
-    <img src={% static "images/kalidragon.png" %} alt="Boss2" style="width:45%" class="w3-circle w3-hover-opacity">
-    <h3><strong>Advanced Linux</strong></h3>
-    <p>Advanced Linux</p>
-  </a>
-</div>
-              
-<!-- Second row -->
-<div class="w3-row"><br>
-          
-  <div class="w3-quarter">
-    <a href="{% url 'personal_projects' %}">
-      <img src={% static "images/c.png" %} alt="Boss2" style="width:45%" class="w3-circle w3-hover-opacity">
-      <h3><strong>C++</strong></h3>
-      <p>Come and look at our projects!</p>
-    </a>
+<!-- Footer -->
+<footer class="text-center" style="background-color:#0cc6df;">
+     
+<!-- Copyright -->
+  <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2)">
+    © 2024 Copyright:
+    <a class="text-dark" href="https://mdbootstrap.com/">TheOutpost.com</a>
   </div>
+<!-- Copyright -->
 
-  <div class="w3-quarter">
-    <a href="{% url 'part_6' %}">
-      <img src={% static "images/python.png" %} alt="Boss2" style="width:45%" class="w3-circle w3-hover-opacity">
-      <h3><strong>Python</strong></h3>
-      <p>Looks at our credentials or lackof!</p>
-    </a>
-  </div>
-
-  <div class="w3-quarter">
-    <a href="{% url 'part_7' %}">
-      <img src={% static "images/java.png" %} alt="Boss2" style="width:45%" class="w3-circle w3-hover-opacity">
-      <h3><strong>Javascript</strong></h3>
-      <p>Self explanatory!</p>
-    </a>
-  </div>
-
-  <div class="w3-quarter">
-    <a href="{% url 'part_8' %}">
-      <img src={% static "images/go2.png" %} alt="Boss2" style="width:45%" class="w3-circle w3-hover-opacity">
-      <h3><strong>Go</strong></h3>
-      <p>Go programming language</p>
-    </a>
-  </div>
-
-</div>
-          
- <!-- Third row -->
-<div class="w3-row"><br>
-          
-  <div class="w3-quarter">
-    <a href="{% url 'personal_projects' %}">
-      <img src={% static "images/rust.png" %} alt="Boss2" style="width:45%" class="w3-circle w3-hover-opacity">
-      <h3><strong>Rust</strong></h3>
-      <p>Come and look at our projects!</p>
-    </a>
-  </div>
-
-  <div class="w3-quarter">
-    <a href="{% url 'part_6' %}">
-      <img src={% static "images/html.png" %} alt="Boss2" style="width:45%" class="w3-circle w3-hover-opacity">
-      <h3><strong>HTML</strong></h3>
-      <p>Looks at our credentials</p>
-    </a>
-  </div>
-
-  <div class="w3-quarter">
-    <a href="{% url 'part_7' %}">
-      <img src={% static "images/skull.png" %} alt="Boss2" style="width:45%" class="w3-circle w3-hover-opacity">
-      <h3><strong>Exploits</strong></h3>
-      <p>Use responsibly</p>
-    </a>
-  </div>
-
-  <div class="w3-quarter">
-    <a href="{% url 'part_8' %}">
-      <img src={% static "images/tool.png" %} alt="Boss2" style="width:45%" class="w3-circle w3-hover-opacity">
-      <h3><strong>Tools</strong></h3>
-      <p>Powerful tools</p>
-    </a>
-  </div>
-
-</div>
-
-<!-- Fourth row -->
-<div class="w3-row"><br>
-
-  <div class="w3-quarter">
-    <a href="{% url 'personal_projects' %}">
-      <img src={% static "images/project.png" %} alt="Boss2" style="width:45%" class="w3-circle w3-hover-opacity">
-      <h3><strong>Projects</strong></h3>
-      <p>Come and look at our projects!</p>
-    </a>
-  </div>
-
-  <div class="w3-quarter">
-    <a href="{% url 'part_6' %}">
-      <img src={% static "images/icon.png" %} alt="Boss2" style="width:45%" class="w3-circle w3-hover-opacity">
-      <h3><strong>Resume</strong></h3>
-      <p>Looks at our credentials or lackof!</p>
-    </a>
-  </div>
-
-  <div class="w3-quarter">
-    <a href="{% url 'part_7' %}">
-      <img src={% static "images/blogging.png" %} alt="Boss2" style="width:45%" class="w3-circle w3-hover-opacity">
-      <h3><strong>Blog/Tutorials</strong></h3>
-      <p>Self explanatory!</p>
-    </a>
-  </div>
-
-  <div class="w3-quarter">
-    <a href="{% url 'part_8' %}">
-      <img src={% static "images/info.png" %} alt="Boss2" style="width:45%" class="w3-circle w3-hover-opacity">
-      <h3><strong>About Us</strong></h3>
-      <p>More info about us!</p>
-    </a>
-  </div>
-
-</div>
-          
-<script>
-
-  // Script for side navigation
-  function w3_open() {
-    var x = document.getElementById("mySidebar");
-    x.style.width = "300px";
-    x.style.paddingTop = "10%";
-    x.style.display = "block";
-  }
-  
-  // Close side navigation
-  function w3_close() {
-    document.getElementById("mySidebar").style.display = "none";
-  }
-  
-  // Used to toggle the menu on smaller screens when clicking on the menu button
-  function openNav() {
-    var x = document.getElementById("navDemo");
-    if (x.className.indexOf("w3-show") == -1) {
-      x.className += " w3-show";
-    } else { 
-      x.className = x.className.replace(" w3-show", "");
-    }
-  }
-</script>
-
-<footer class="w3-container w3-padding-16" style="width: 100%; position: static; background-color: teal; border: 8px solid black; display: flex; flex-direction: column; align-items: center; height: 800px;">
-  <h4 style="color: white; font-size: 24px;">Follow Us</h4>
-  <div class="w3-row" style="display: flex; justify-content: center; align-items: center; margin-bottom: 20px;">
-    <div class="w3-quarter" style="text-align: center;">
-      <img src="{% static 'images/oozly4.png' %}" alt="Boss1" style="width: 40%;" class="w3-circle w3-hover-opacity">
-      <div>
-        <h3 style="color: white; font-size: 30px;">Jesse Larabie</h3>
-        <p style="color: white; font-size: 20px;">Web Designer & Cyber security</p>
-        <p style="color: white; font-size: 20px;">Expert</p>
-      </div>
-    </div>
-    <div class="w3-quarter" style="text-align: center;">
-      <img src="{% static 'images/nukee.png' %}" alt="Boss1" style="width: 40%;" class="w3-circle w3-hover-opacity">
-      <div>
-        <h3 style="color: white; font-size: 30px;">Johnathan Hienrick</h3>
-        <p style="color: white; font-size: 20px;">Web Designer & Cyber security</p>
-        <p style="color: white; font-size: 20px;">Expert</p>
-      </div>
-    </div>
-  </div>
-  <div style="display: flex; justify-content: space-between; width: 100%;">
-    <div>
-      <a class="w3-button w3-xlarge w3-teal" href="" title="Facebook"><i class="fa fa-facebook"></i></a> 
-      <a class="w3-button w3-xlarge w3-teal" href="" title="Twitter"><i class="fa fa-twitter"></i></a> 
-      <a class="w3-button w3-xlarge w3-teal" href="" title="Instagram"><i class="fa fa-instagram"></i></a> 
-      <a class="w3-button w3-xlarge w3-teal" href="" title="LinkedIn"><i class="fa fa-linkedin"></i></a>
-    </div>
-    <div>
-      <div style="position:relative; bottom: 30px; z-index: 1;" class="w3-tooltip w3-right">
-        <span class="w3-text w3-padding w3-teal w3-hide-small">Go To Top</span>   
-        <a class="w3-button w3-theme w3-xlarge" href="#myPage"><span class="w3-xlarge"><i class="fa fa-chevron-circle-up"></i></span></a>
-      </div>
-    </div>
-  </div>
-  <p style="color: white; font-size: 20px;">&copy; 2024 The Outpost. All rights reserved.</p>
-  <p style="color: white; font-size: 20px;">Contact: Jesselarabie1@gmail.com</p>
 </footer>
+<!-- Footer -->
+</div>
+</div>
+</div>
 
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 
 </body>
 </html>

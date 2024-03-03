@@ -1,0 +1,455 @@
+{% load static %} 
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.3">
+  <title>The Outpost</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-black.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<!-- Font Awesome -->
+<link
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+  rel="stylesheet"
+/>
+<!-- Google Fonts -->
+<link
+  href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
+  rel="stylesheet"
+/>
+<!-- MDB -->
+<link
+  href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/7.1.0/mdb.min.css"
+  rel="stylesheet"
+/>
+<style>
+  /* Add black outline to images */
+  img {
+    outline: 5px solid black; /* Adjust the width as needed */
+  }
+</style>
+
+
+</head>
+<body id="myPage">
+
+  
+
+ 
+    <!-- Image Header -->
+    <div class="w3-display-container w3-animate-opacity">
+      <img src={% static 'images/banner35.png' %} alt="Banner" style="width:100%;min-height: border: 165px;max-height:160px;">
+      <div class="w3-container w3-display-bottomleft w3-margin-bottom">  
+        <button onclick="document.getElementById('id01').style.display='block'" class="w3-button w3-xlarge w3-theme w3-hover-teal" title="Test3">FAQ</button>
+      </div>
+    </div>
+
+<!-- Sound -->
+<audio id="myAudio" loop muted>
+
+<!-- Default song -->
+  <source id="audioSource" src="{% static 'images/wethands.mp3' %}" type="audio/mpeg">
+  Your browser does not support the audio element.
+</audio>
+
+<!-- Buttons to toggle and choose songs -->
+<button onclick="toggleAudio()" class="w3-button w3-large w3-teal" title="Toggle Audio">Toggle Audio</button>
+<button onclick="openSongPopup()" class="w3-button w3-large w3-teal" title="Choose Song">Choose Song</button>
+
+<!-- Volume slider -->
+<input type="range" min="0" max="100" value="100" id="volumeSlider" oninput="changeVolume(this.value)" style="width: 200px;">
+
+<!-- Modal popup for song selection -->
+<div id="songModal" class="w3-modal">
+  <div class="w3-modal-content w3-card-4">
+    <header class="w3-container w3-teal">
+      <span onclick="closeSongPopup()" class="w3-button w3-teal w3-display-topright">&times;</span>
+      <h2>Choose a Song</h2>
+    </header>
+    <div class="w3-container">
+      <div>
+        <p>Minecraft</p>
+        <ul>
+          <li><a href="#" onclick="changeSong('{% static 'images/aria_math.mp3' %}'); return false;">Aria Math</a></li>
+          <li><a href="#" onclick="changeSong('{% static 'images/wethands.mp3' %}'); return false;">Wet Hands</a></li>
+          <li><a href="#" onclick="changeSong('{% static 'images/haggstrom.mp3' %}'); return false;">Haggstrom</a></li>
+          <li><a href="#" onclick="changeSong('{% static 'images/haunt_muskie.mp3' %}'); return false;">Haunt Muskie</a></li>
+          <li><a href="#" onclick="changeSong('{% static 'images/subwoofer.mp3' %}'); return false;">Subwoofer Lullaby</a></li>
+        </ul>
+      </div>
+      <div>
+        <p>Mario</p>
+        <ul>
+          <li><a href="#" onclick="changeSong('{% static 'images/Bowser_Peaches.mp3' %}'); return false;">Peaches (Mario Movie)</a></li>
+          <li><a href="#" onclick="changeSong('{% static 'images/Super_mario_bros_theme_song.mp3' %}'); return false;">Super Mario Bros Theme Song (Super Mario World)</a></li>
+          <li><a href="#" onclick="changeSong('{% static 'images/Piranha_Plants_Lullaby.mp3' %}'); return false;">Piranha Plant Lullaby (super mario 64)</a></li>
+          <li><a href="#" onclick="changeSong('{% static 'images/Gelato_Beach.mp3' %}'); return false;">Gelato Beach (Super Mario Sunshine)</a></li>
+          <li><a href="#" onclick="changeSong('{% static 'images/Gusty_Garden_Galaxy.mp3' %}'); return false;">Gusty Garden Galaxy (Super Mario Galaxy)</a></li>
+          <li><a href="#" onclick="changeSong('{% static 'images/Night_Of_Doom_Bowsers_Sky_Palace_Theme.mp3' %}'); return false;">Night of doom boswer's theme (Super Mario 74)</a></li>
+        </ul>
+      </div>
+      <div>
+        <p>The Legend Of Zelda</p>
+        <ul>
+          <li><a href="#" onclick="changeSong('{% static 'images/lost_woods.mp3' %}'); return false;">Lost Woods (The Legend of Zelda: Ocarina Of Time)</a></li>
+          <li><a href="#" onclick="changeSong('{% static 'images/Great_fairy.mp3' %}'); return false;">Great Fairy Fountain (The Legend of Zelda: Ocarina Of Time)</a></li>
+          <li><a href="#" onclick="changeSong('{% static 'images/gerudo_valley.mp3' %}'); return false;">Gerudo Valley (The Legend of Zelda: Ocarina Of Time)</a></li>
+          <li><a href="#" onclick="changeSong('{% static 'images/title_theme.mp3' %}'); return false;">Title Theme (The Legend of Zelda: Twilight Princess)</a></li>
+          <li><a href="#" onclick="changeSong('{% static 'images/Midnas_Lament.mp3' %}'); return false;">Midna's Tament (The Legend of Zelda: Twilight Princess)</a></li>
+          <li><a href="#" onclick="changeSong('{% static 'images/midnas_theme.mp3' %}'); return false;">Midna's Theme (The Legend of Zelda: Twilight Princess)</a></li>
+          <li><a href="#" onclick="changeSong('{% static 'images/dragon.mp3' %}'); return false;">Dragon Roost Island (The Legend of Zelda: Windwaker)</a></li>
+        </ul>
+      </div>
+      <p>Megaman</p>
+        <ul>
+          <li><a href="#" onclick="changeSong('{% static 'images/opening.mp3' %}'); return false;">Opening Theme (Megaman 8)</a></li>
+          <li><a href="#" onclick="changeSong('{% static 'images/Title_Theme _megaman.mp3' %}'); return false;">Title Theme (Megaman 8)</a></li>
+          <li><a href="#" onclick="changeSong('{% static 'images/Stage_Select1.mp3' %}'); return false;">Stage Select (Megaman 8)</a></li>
+          <li><a href="#" onclick="changeSong('{% static 'images/Stage_Select_Sega_Genesis_remix.mp3' %}'); return false;">Stage Select Remix (Megaman 8)</a></li>
+          <li><a href="#" onclick="changeSong('{% static 'images/Frost_Man.mp3' %}'); return false;">Frost Man Stage Theme (Megaman 8)</a></li>
+          <li><a href="#" onclick="changeSong('{% static 'images/astro_man.mp3' %}'); return false;">Astro Man Stage Theme (Megaman 8)</a></li>
+          <li><a href="#" onclick="changeSong('{% static 'images/Wily_Stage1.mp3' %}'); return false;">Wily Stage 1 (Megaman 8)</a></li>
+        </ul>
+      </div>
+      <div>
+    </div>
+  </div>
+</div>
+
+<script>
+
+  // Function to change the volume
+  function changeVolume(volume) {
+    var audio = document.getElementById("myAudio");
+    audio.volume = volume / 100;
+  }
+
+  // Function to retrieve the selected song from browser storage
+  function getSelectedSong() {
+    return localStorage.getItem('selectedSong');
+  }
+
+  // Function to set the selected song to browser storage
+  function setSelectedSong(songUrl) {
+    localStorage.setItem('selectedSong', songUrl);
+  }
+
+  // Function to toggle the audio playback
+  function toggleAudio() {
+    var audio = document.getElementById("myAudio");
+    if (audio.paused) {
+      audio.play();
+      audio.muted = false; // Unmute the audio when it starts playing
+    } else {
+      audio.pause();
+    }
+  }
+
+  // Function to open the song selection modal
+  function openSongPopup() {
+    document.getElementById("songModal").style.display = "block";
+  }
+
+  // Function to close the song selection modal
+  function closeSongPopup() {
+    document.getElementById("songModal").style.display = "none";
+  }
+
+  // Function to change the selected song
+  function changeSong(songUrl) {
+    var audio = document.getElementById("myAudio");
+    audio.src = songUrl;
+    audio.play();
+    audio.muted = false; // Unmute the audio when it starts playing
+    setSelectedSong(songUrl); // Save the selected song to browser storage
+    closeSongPopup(); // Close the song selection modal
+  }
+
+  // When the page loads, check if there's a selected song and play it
+  window.onload = function() {
+    var selectedSong = getSelectedSong();
+    if (selectedSong) {
+      var audio = document.getElementById("myAudio");
+      audio.src = selectedSong;
+      audio.play();
+      audio.muted = false; // Unmute the audio when it starts playing
+    }
+  };
+</script>
+
+<!-- Modal -->
+    <div id="id01" class="w3-modal">
+      <div class="w3-modal-content w3-card-4 w3-animate-top">
+        <header class="w3-container w3-teal w3-display-container"> 
+          <span onclick="document.getElementById('id01').style.display='none'" class="w3-button w3-teal w3-display-topright"><i class="fa fa-remove"></i></span>
+          <h4> If you notice any bugs or if you would like to tell me something </h4>
+          <h5> <i class="fa fa-smile-o"></i></h5>
+        </header>
+        <div class="w3-container">
+          <p>You can reach me at: Jesselarabie1@gmail.com</p>
+          <p><a class="w3-text-teal" href="/home"></p>
+          </div>
+          <footer class="w3-container w3-teal">
+            <p>The Outpost</p>
+          </footer>
+        </div>
+      </div>
+
+      <!-- Team Container -->
+      <style>
+        .w3-row {
+          display: flex;
+          flex-wrap: wrap;
+        }
+        
+        .w3-quarter {
+          flex: 1;
+          padding: 10px;
+          box-sizing: border-box;
+        }
+        
+        .w3-quarter a {
+          display: block;
+          text-decoration: none;
+          color: inherit;
+        }
+        
+        .w3-quarter img {
+          display: block;
+          margin: 0 auto;
+        }
+        
+        .w3-quarter h3,
+        .w3-quarter p {
+          text-align: center;
+        }
+      </style>
+      
+      <div class="w3-container w3-padding-64 w3-center" id="team">
+        <h2>Table Of Contents</h2>
+        <p>Welcome to the Cyber security section of the Outpost!</p>
+        <div class="w3-row">
+          <br>      
+              
+<!-- First row -->
+<div class="w3-quarter">
+  <a href="{% url 'cybersecurity' %}">
+    <img src={% static "images/cyber.png" %} alt="Boss2" style="width:45%" class="w3-circle w3-hover-opacity">
+    <h3><strong>Cyber security basics</strong></h3>
+    <p>Look at our 8 part course for cyber security!</p>
+  </a>
+</div>
+
+<div class="w3-quarter">
+  <a href="{% url 'windows_basics' %}">
+    <img src={% static "images/windows.png" %} alt="Boss2" style="width:45%" class="w3-circle w3-hover-opacity">
+    <h3><strong>Windows basics</strong></h3>
+    <p>Windows Fundamentals!</p>
+  </a>
+</div>
+
+<div class="w3-quarter">
+  <a href="{% url 'part_4' %}">
+    <img src={% static "images/linux.png" %} alt="Boss2" style="width:45%" class="w3-circle w3-hover-opacity">
+    <h3><strong>Linux Basics</strong></h3>
+    <p>Fundamentals of linux</p>
+  </a>
+</div>
+
+<div class="w3-quarter">
+  <a href="{% url 'personal_projects' %}">
+    <img src={% static "images/kalidragon.png" %} alt="Boss2" style="width:45%" class="w3-circle w3-hover-opacity">
+    <h3><strong>Advanced Linux</strong></h3>
+    <p>Advanced Linux</p>
+  </a>
+</div>
+              
+<!-- Second row -->
+<div class="w3-row"><br>
+          
+  <div class="w3-quarter">
+    <a href="{% url 'personal_projects' %}">
+      <img src={% static "images/c.png" %} alt="Boss2" style="width:45%" class="w3-circle w3-hover-opacity">
+      <h3><strong>C++</strong></h3>
+      <p>Come and look at our projects!</p>
+    </a>
+  </div>
+
+  <div class="w3-quarter">
+    <a href="{% url 'part_6' %}">
+      <img src={% static "images/python.png" %} alt="Boss2" style="width:45%" class="w3-circle w3-hover-opacity">
+      <h3><strong>Python</strong></h3>
+      <p>Looks at our credentials or lackof!</p>
+    </a>
+  </div>
+
+  <div class="w3-quarter">
+    <a href="{% url 'part_7' %}">
+      <img src={% static "images/java.png" %} alt="Boss2" style="width:45%" class="w3-circle w3-hover-opacity">
+      <h3><strong>Javascript</strong></h3>
+      <p>Self explanatory!</p>
+    </a>
+  </div>
+
+  <div class="w3-quarter">
+    <a href="{% url 'part_8' %}">
+      <img src={% static "images/go2.png" %} alt="Boss2" style="width:45%" class="w3-circle w3-hover-opacity">
+      <h3><strong>Go</strong></h3>
+      <p>Go programming language</p>
+    </a>
+  </div>
+
+</div>
+          
+ <!-- Third row -->
+<div class="w3-row"><br>
+          
+  <div class="w3-quarter">
+    <a href="{% url 'personal_projects' %}">
+      <img src={% static "images/rust.png" %} alt="Boss2" style="width:45%" class="w3-circle w3-hover-opacity">
+      <h3><strong>Rust</strong></h3>
+      <p>Come and look at our projects!</p>
+    </a>
+  </div>
+
+  <div class="w3-quarter">
+    <a href="{% url 'part_6' %}">
+      <img src={% static "images/html.png" %} alt="Boss2" style="width:45%" class="w3-circle w3-hover-opacity">
+      <h3><strong>HTML</strong></h3>
+      <p>Looks at our credentials</p>
+    </a>
+  </div>
+
+  <div class="w3-quarter">
+    <a href="{% url 'part_7' %}">
+      <img src={% static "images/skull.png" %} alt="Boss2" style="width:45%" class="w3-circle w3-hover-opacity">
+      <h3><strong>Exploits</strong></h3>
+      <p>Use responsibly</p>
+    </a>
+  </div>
+
+  <div class="w3-quarter">
+    <a href="{% url 'part_8' %}">
+      <img src={% static "images/tool.png" %} alt="Boss2" style="width:45%" class="w3-circle w3-hover-opacity">
+      <h3><strong>Tools</strong></h3>
+      <p>Powerful tools</p>
+    </a>
+  </div>
+
+</div>
+
+<!-- Fourth row -->
+<div class="w3-row"><br>
+
+  <div class="w3-quarter">
+    <a href="{% url 'personal_projects' %}">
+      <img src={% static "images/project.png" %} alt="Boss2" style="width:45%" class="w3-circle w3-hover-opacity">
+      <h3><strong>Projects</strong></h3>
+      <p>Come and look at our projects!</p>
+    </a>
+  </div>
+
+  <div class="w3-quarter">
+    <a href="{% url 'part_6' %}">
+      <img src={% static "images/icon.png" %} alt="Boss2" style="width:45%" class="w3-circle w3-hover-opacity">
+      <h3><strong>Resume</strong></h3>
+      <p>Looks at our credentials or lackof!</p>
+    </a>
+  </div>
+
+  <div class="w3-quarter">
+    <a href="{% url 'part_7' %}">
+      <img src={% static "images/blogging.png" %} alt="Boss2" style="width:45%" class="w3-circle w3-hover-opacity">
+      <h3><strong>Blog/Tutorials</strong></h3>
+      <p>Self explanatory!</p>
+    </a>
+  </div>
+
+  <div class="w3-quarter">
+    <a href="{% url 'part_8' %}">
+      <img src={% static "images/info.png" %} alt="Boss2" style="width:45%" class="w3-circle w3-hover-opacity">
+      <h3><strong>About Us</strong></h3>
+      <p>More info about us!</p>
+    </a>
+  </div>
+
+</div>
+          
+<script>
+
+// Script for side navigation
+  function w3_open() {
+    var x = document.getElementById("mySidebar");
+    x.style.width = "300px";
+    x.style.paddingTop = "10%";
+    x.style.display = "block";
+  }
+  
+  // Close side navigation
+  function w3_close() {
+    document.getElementById("mySidebar").style.display = "none";
+  }
+  
+  // Used to toggle the menu on smaller screens when clicking on the menu button
+  function openNav() {
+    var x = document.getElementById("navDemo");
+    if (x.className.indexOf("w3-show") == -1) {
+      x.className += " w3-show";
+    } else { 
+      x.className = x.className.replace(" w3-show", "");
+    }
+  }
+</script>
+
+<!-- Footer -->
+<footer class=" text-center " style="background-color:#0cc6df;">
+  <!-- Grid container -->
+  <div class="container p-4">
+
+    <!-- Section: Social media -->
+    <section class="mb-4">
+      <!-- Facebook -->
+      <a class="btn btn-primary btn-floating m-1" style="background-color: #3b5998" href="#!" role="button"><i class="fab fa-facebook-f"></i></a>
+
+      <!-- Twitter -->
+      <a class="btn btn-primary btn-floating m-1" style="background-color: #55acee" href="#!" role="button"><i class="fab fa-twitter"></i></a>
+
+      <!-- Google -->
+      <a class="btn btn-primary btn-floating m-1" style="background-color: #dd4b39" href="#!" role="button"><i class="fab fa-google"></i></a>
+
+      <!-- Instagram -->
+      <a class="btn btn-primary btn-floating m-1" style="background-color: #ac2bac" href="#!" role="button"><i class="fab fa-instagram"></i></a>
+
+      <!-- Linkedin -->
+      <a class="btn btn-primary btn-floating m-1" style="background-color: #0082ca" href="#!" role="button"><i class="fab fa-linkedin-in"></i></a>
+      <!-- Github -->
+      <a class="btn btn-primary btn-floating m-1" style="background-color: #333333" href="#!" role="button"><i class="fab fa-github"></i></a>
+    </section>
+    <!-- Section: Social media -->
+
+
+
+
+  </div>
+  <!-- Grid container -->
+
+  <!-- Copyright -->
+  <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2)">
+    © 2020 Copyright:
+    <a class="text-dark" href="https://mdbootstrap.com/">MDBootstrap.com</a>
+  </div>
+  <!-- Copyright -->
+
+</footer>
+<!-- Footer -->
+    </div>
+  </div>
+</div>
+
+
+</body>
+</html>
